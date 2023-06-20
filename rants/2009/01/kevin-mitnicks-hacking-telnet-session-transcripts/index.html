@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2009&#x2F;01&#x2F;kevin-mitnicks-hacking-telnet-session-transcripts&#x2F;">Kevin Mitnick&#x27;s hacking telnet session transcripts</a>
+</h2>
+<p class="subtitle"><strong>2009-01-28</strong></p>
+</div>
+<div class="item">
+<p><a href="https://shinnok.com/rants/2009/01/kevin-mitnicks-hacking-telnet-session-transcripts/images/lamo-mitnick-poulsen.png"><img src="https://shinnok.com/rants/2009/01/kevin-mitnicks-hacking-telnet-session-transcripts/images/lamo-mitnick-poulsen.png" alt="lamo-mitnick-poulsen" title="lamo-mitnick-poulsen" /></a> Adrian Lamo, Kevin Mitnick, Kevin Poulsen</p>
+<p>In case you have been living on the moon:</p>
+<blockquote>
+<p><strong>Kevin David Mitnick</strong> (born August 6, 1963) is a computer security consultant and author, who was incarcerated for more than four years without trial or a bail hearing.</p>
+<p>He was a world-famous controversial computer hacker in the late 20th century, who was at the time of his arrest, the most wanted computer criminal in United States history. <a href="https://en.wikipedia.org/wiki/Kevin_Mitnick">more...</a></p>
+</blockquote>
+<p>Ever wanted to see Kevin in action?</p>
+<p>See him as he types?</p>
+<p>See him as he hacks/cracks?</p>
+<p>Then you have clicked to the right place.</p>
+<p>Some of the network data gathered(sniffed or logged) for prosecution before Kevin's apprehension by telco's and other parties involved in the investigation with the help of <a href="https://en.wikipedia.org/wiki/Tsutomu_Shimomura">Tsutomu Shimomura</a>, has been released to the public a long time ago. Shimomura used a custom version of <a href="https://en.wikipedia.org/wiki/Tcpdump" title="tcpdump">tcpdump</a> in his sniffing sessions on Mitnick and eventually he made a program to convert the gathered data into an interactive application that matches exactly what Mitnick was seeing and doing during his telnet sessions(it sounds more complicated than it is, a little understanding of the <a href="https://en.wikipedia.org/wiki/Telnet" title="telnet">telnet</a> protocol, which dominated the internet back then, and the fact that a <a href="https://en.wikipedia.org/wiki/Tcpdump" title="tcpdump">tcpdump</a> session on a host between mitnick and he's other peers contains all the needed information to recreate with precise accuracy exactly what happened,when and how it looked).</p>
+<p>They have been hosted at the evidence section on a site called <a href="https://takedown.com">Takedown</a>(like the <a href="https://www.amazon.com/Takedown-Pursuit-Americas-Computer-Outlaw/dp/0786889136">book by Shimomura&amp;John Markoff</a> and <a href="https://www.imdb.com/title/tt0159784/">the movie</a>) along with the prank calls made to Shimomura's voicemail and other related stuff.</p>
+<p>If you're not familiar with Kevin's story and a little bit of unix/linux i don't think you will be making much sense out of the transcripts,except for the chatting sessions. Although this looks like a great motivation to start learning/using linux/unix just because you wanted to understand what is the stuff Kevin types while he <em>hacks</em>. :twisted:</p>
+<p>If you want to know more about Kevin's story just press <a href="https://letmegooglethatforyou.com/?q=Kevin+Mitnick">the magic button</a> or roll your eyes over <a href="https://takedown.com/coverage/newspaper.html">news/articles on takedown</a>.</p>
+<p>For the Mitnick familiar and hackers out there i present <a href="https://takedown.com/coverage/tsu-post.html">Tsutomu's January 25 Post to Usenet</a> which explains with some level of detail the IP source address spoofing and TCP sequence number prediction attacks that were used by Kevin to <strong>pwn</strong> Shimomura's diskless X terminal and from there using a loadable kernel STREAMS module an existent connection to Shimomura's real box was hijacked thus leading to the <strong>pwnage</strong> of Tsutomu's goodies treasurechest.It was interesting the way Tsutomu wanted to make sure the world understands how his box got owned. :oops:</p>
+<p>You will be needing telnet to view the sessions. For each session you will have to telnet on a different port on the same machine as each transcript is served through a different port.</p>
+<p>:arrow:  <a href="https://takedown.com">The site</a> :arrow:  <a href="https://takedown.com/evidence/transcripts/index.html">Telnet transcripts</a> :arrow:  <a href="https://takedown.com/evidence/voicemail/index.html">Voicemail pranks to Shimomura</a></p>
+<p><img src="https://shinnok.com/rants/2009/01/kevin-mitnicks-hacking-telnet-session-transcripts/images/kevin_mitnick.gif" alt="kevin_mitnick" title="kevin_mitnick" /> They always use the ugliest picture possible,so that he looks like a pedofile and everyone is happy.</p>
+<p><em>I am eager to see Kevin haaack, i want to see some stuff right now! Gimme teh box and it's hole!</em></p>
+<p>Well select one from bellow based on the summary of the transcript, then open a shell and type/paste the corresponding telnet command:</p>
+<p><em>This is the chat session in which Kevin asks his friend jsz at Ben-Gurion University in Israel for tools. He asks over and over again until he gets satisfaction. Since we are seeing what Kevin saw, in the talk session the top half of the window (above the dashed line) is what he was saying; the bottom is what jsz was saying.  ---&gt;</em></p>
+<p><strong>telnet kevin-on-demand.takedown.com 4009</strong></p>
+<p><em>Nobody speaks better for Kevin Mitnick than Kevin himself. Here we learn that we are indeed dealing with Mitnick, as well as good many other   things.   Do these sound like nice people to you?Discussion of Tsutomu, Markoff, Dan Farmer, a &quot;picture on the front page of the New York Times.&quot; ---&gt;</em></p>
+<p><strong>telnet kevin-on-demand.takedown.com 4010</strong></p>
+<p><em>Kevin breaks into Dan Farmer's machine(creator of SATAN security scanner), fish.com, and peruses his files and mail looking for information about himself, Tsutomu, security holes, and the FBI. Breaks into Sun, confirming that the &quot;access1&quot; in the talk session that afternoon really did refer to access1.sun.com. Kevin also has a fascination with looking through the command histories of system administrators, presumbaly to see if they are on to him. ---&gt;</em></p>
+<p><strong>telnet kevin-on-demand.takedown.com 4013</strong></p>
+<p><em>This is the first session where a possible reference to &quot;Mitnick&quot; was seen. ---&gt;</em></p>
+<p><strong>telnet kevin-on-demand.takedown.com 4008</strong></p>
+<p><em>Many more</em> <a href="https://takedown.com/evidence/transcripts/index.html">here</a><em>.</em></p>
+<p><em>Dude??!? What's a shell?!?! :roll:</em></p>
+<p>This will do just fine for you:</p>
+<p>https://www.youtube.com/v/69rei214eDE</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

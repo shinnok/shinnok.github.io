@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;07&#x2F;using-the-qt-creator-ide-with-non-qt-projects&#x2F;">Using the Qt Creator IDE with non Qt projects</a>
+</h2>
+<p class="subtitle"><strong>2011-07-17</strong></p>
+</div>
+<div class="item">
+<p> </p>
+<p><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/Qt_Creator_Icon_Web.png" alt="" title="Qt_Creator_Icon_Web" /></p>
+<p>Leading rant:</p>
+<p>Inspired by this <a href="https://lists.wikimedia.org/pipermail/wikitech-l/2011-May/053271.html">post</a>(read it because I am going to reference it) on the Wikitech mailing list I was inspired to write about <a href="https://qt.nokia.com/products/developer-tools/">Qt Creator</a>, the IDE that I use for about an year now for almost any kind of C/C++ project and which I think it is pretty close to being a type 1 Integrated Development Environment, as written by Paul in that e-mail, which is a real and useful IDE, at least for my use cases. Qt Creator is a powerful and flexible IDE most useful for C/C++ code and especially when used in combination with the <a href="https://qt.nokia.com/">Qt SDK</a>. However, due it's extreme flexibility, Qt Creator can be tweaked to work with almost any kind of C/C++ source project, from the default qmake project files to <a href="https://www.cmake.org/">CMake</a>, <a href="https://www.gnu.org/s/hello/manual/automake/Autotools-Introduction.html">GNU Autotools</a>(the <a href="https://en.wikipedia.org/wiki/GNU_build_system">GNU Build System</a>), standalone <a href="https://en.wikipedia.org/wiki/Make_(software)">Makefiles</a> or even custom commands for direct access command line steps for direct compiler and linkage directives.</p>
+<p>While I prefer type 2 IDE's for most of the day, which are powerful text editors like <a href="https://www.vim.org/">Vim</a> for casual hacking or minor code modifications, which VIM excels at, especially with its modal mode, delving into an entirely unknown code base(especially a big one) or using new libraries and apis or for long coding sessions, in a simple text editor, even as powerfull as Vim or Emacs, things start to get inconvenient pretty easily and you will notice a slow down, mainly because of the poor code browsing, syntax highlighting(C++) and code completion capabilities that they posses. They are not to be blamed though and there's also nothing wrong with them, they are simply text editors and not IDE's. Since Vim is my favorite text editor, I tried various combinations of <a href="https://ctags.sourceforge.net/">Ctags</a> and <a href="https://cscope.sourceforge.net/">CScope</a> and all kinds of crazy hacks on top of that, just to be able to have code nagivation and code completion at least to some extent. You can find my Vimrc file in <a href="https://trunk.shinnok.com/vimrc">here</a>, without Ctags and CScope, since that would make for entire post by its own.</p>
+<p>However, I got tired of it after some time, especially because it doesn't work that nice with some of the crazy quirks that C++ for e.g. exhibits and because I have to keep the databases that those tools use up to date frequently and manually, for every project that I am working on. For terminal only access, coding like this is fine, to some extent, however, this seemed really overkill on my desktop, especially since I am running an X desktop with a GUI and knowing that I could do better to be more productive in 2011.</p>
+<p>Ok, let's take a first look at how Qt Creator looks like in action, since I know I made you curious by now:</p>
+<p><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-screenshot-1.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-screenshot-1-500x381.png" alt="" title="qt-creator-screenshot-1" /></a></p>
+<p>Now I'm going to list some of the strongest points and features that Qt Creator has and that I think make it stand out:</p>
+<ul>
+<li>Open Source - <a href="https://qt.gitorious.org/qt-creator">https://qt.gitorious.org/qt-creator</a></li>
+<li>Cross Platform - Works on Linux, Windows and Mac OS X like a charm</li>
+<li>Actively developed and improved</li>
+<li>Strong orientation and support for C/C++ native development</li>
+<li>Excellent syntax highlighting</li>
+<li>Magnificent code browsing and navigation in combination with useful and customizable keyboard shortcuts</li>
+<li>Great and generic(works with any file you include, it doesn't have to know anything special about it) code completion support</li>
+<li>Easily customizable and Extensible through plugins</li>
+<li>Support for integration with various Source Control Management tools like Git, Subversion, Bazaar, Mercurial, CVS and more.</li>
+<li>Debugger integration with both GDB and Microsoft's Debugging Tools for Windows through <a href="https://msdn.microsoft.com/en-us/library/ff539051(v=vs.85).aspx">CDB</a> (this one could use some improvement but it's still better the debugging from the command line)</li>
+<li>Custom configure, build, clean and deployment steps</li>
+<li>Integration with tools like <a href="https://en.wikipedia.org/wiki/Valgrind">Valgrind</a></li>
+<li>Per project settings</li>
+<li>Vim editing mode</li>
+<li>Code snippets</li>
+<li>A pretty fast IDE, even when indexing hundreds of files with hundreds of thousands lines of code for the first time</li>
+<li><a href="https://shinnok.com/rants/2011/07/19/linux-man-pages-integration-with-qt-creator/" title="Linux Man Pages integration with Qt Creator">Linux Man Pages context help integration</a> - thanks to the flexible <a href="https://doc.qt.nokia.com/latest/qthelp-framework.html">Qt Help System</a>, this can be extended to almost any API</li>
+</ul>
+<p>Although I only listed what I like the most on top of my head, Qt Creator has many cool and useful features and the only way to experience them all, is to start using it and you really should give it a spin, because as you can see, it's feature list is nothing close to short. You can find some videos that show you <a href="https://www.youtube.com/view_play_list?p=22E601663DAF3A14">some of the features</a> I described above in action on Youtube, but keep in mind that they are kind of old(around 2009) and Qt Creator has very much evolved a lot since then.</p>
+<p>The how to:</p>
+<p>Now let's get to the main purpose of this post, using Qt Creator with GNU Build System projects. A project that follows the GNU Build System usually is composed of a configure file and several other inputs(configure.ac, Makefile.am) that help in creating the Makefiles that will build the actual project on the target platform. The GNU Build System is, of course, <a href="https://en.wikipedia.org/wiki/GNU_build_system">much more</a> then that, but for this tutorial, that's all you need to know and because these steps will also work for projects that have only the Makefiles for e.g.</p>
+<p>Next I'm going to show you how easy it is to use Qt Creator with the <a href="https://nmap.org">Nmap</a> security scanner based on the steps outlined below:</p>
+<ol>
+<li>Download and install Qt Creator from <a href="https://qt.nokia.com/downloads">https://qt.nokia.com/downloads</a>. At the time of writing this, I'm using Qt Creator 2.2.1. I'm going to assume you're going to be using Linux from now on, any distro should be fine as long as you are comfortable with it, however, I am using <a href="https://www.debian.org/">Debian</a>(Squeeze). If you can't make up your mind, just use <a href="https://www.ubuntu.com/">Ubuntu</a>. For Mac OS X and Windows steps should be similar.</li>
+<li>Decide on a project to use. I'm going to use <a href="https://nmap.org">Nmap</a> since that's what I'm working on currently and because it is the perfect example of a great open source project that's low level enough to illustrate system programming using Qt Creator. You can download the latest version tarball from <a href="https://nmap.org/download">https://nmap.org/download</a>(<a href="https://nmap.org/dist/nmap-5.59BETA1.tar.bz2">nmap-5.59BETA1.tar.bz2</a> is fine). After deciding on a project, you should install all of the development dependencies(the toolchain) that your chosen project needs, like the right compiler, libraries and other tools you might need. For Nmap, for e.g., we will need gcc, openssl libraries, libpcap, perl, python, etc. If you're on a Debian like distribution(Debian, Ubuntu), luckily you can just do <em>apt-get build-dep nmap</em> and you get everything you need in one shot. If you do some tests builds from the command line, remember to clean the source tree before proceeding to the next steps, since you only want to add to the project only the base files and none of the auto generated files from the build system.</li>
+<li>Assuming you installed Qt Creator successfully, open it and go to <em>File -&gt; New File or Project -&gt; Other Project</em> and click on <em>Import Existing Project</em>. Advance to the next screen.<a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-1.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-1-500x433.png" alt="" title="qt-creator-step-1" /></a><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-1.png"></a></li>
+<li>In the current screen, give your project a name(that name will be used for your project files too so don't go crazy with spaces or special chars) and select the location to your project source tree. In the nmap example, <strong>Nmap</strong> is a good project name and for <em>Location</em> browse to the path where you extracted the nmap source archive. Click on Next.<a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-2.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-2-500x312.png" alt="" title="qt-creator-step-2" /></a><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-2.png"></a></li>
+<li>The next screen, Project Management, is going to ask you if you want to use source control management(git, svn) for your project and if yes,then the project files will be the first to be added to the project. You should add these files to the scm repository only if you know that they would be usefull for others, otherwise you should keep them to your self, by using exclude directives like <a href="https://www.kernel.org/pub/software/scm/git/docs/gitignore.html">.gitignore</a> files in git or <a href="https://svnbook.red-bean.com/en/1.5/svn.advanced.props.special.ignore.html">svn:ignore</a>property in svn.  For the Nmap case, the project files are:
+<ul>
+<li>Nmap.config     - Project configuration settings like predefined Macros</li>
+<li>Nmap.creator    - Qt Creator settings</li>
+<li>Nmap.files         - A listing of all the files included in the project</li>
+<li>Nmap.includes - Include directories</li>
+<li>Nmap.creator.user - This one is excluded from adding to svn since it stores per user project settings.<a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-3.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-3-500x312.png" alt="" title="qt-creator-step-3" /></a><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-3.png"></a></li>
+</ul>
+</li>
+<li>Assuming everything went fine, you should now have your project open in Qt Creator and ready to proceed to project settings. On the left side of Qt Creator click on Projects. Right now you're looking at the <strong>Build Settings</strong> screen. This is where you set your project building and cleaning steps. For Nmap, the building process is made of the <em>configure</em> step and the <em>make</em> step. The clean process is made of the _make clean_step. Let's add these steps to the build settings:
+<ol>
+<li>On the Build Steps section click on <em>Add Build Step -&gt; Custom Process Step.</em> Click on <em>Enable Custom Process Step checkbox</em> and add the following command to the <em>Command:</em> text box: <strong>./configure</strong>. Move this step to the top of the stack by clicking on the upper arrow that fades in when you hover the build step. This step, the configure process, can only be run once and then disabled, since you don't really need to run it again unless you run <em>make distclean</em> or modify the build system.</li>
+<li>Now expand the Make step and deselect the all checkbox in the <em>Targets</em> section. We don't need that argument for Nmap, since Nmap's Makefiles doesn't have an &quot;all&quot; target. Now all the make step will do is issuing the <strong>make</strong> command.<a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-4.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-4-500x381.png" alt="" title="qt-creator-step-4" /></a><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-4.png"></a></li>
+</ol>
+</li>
+<li>Now let's proceed to the deployment steps, the <strong>Run Settings</strong> tab next to Build Settings, assuming that you would want to run Nmap in a basic form after a successful build just to know that everything runs smoothly. However for most cases, with tools like Nmap that have dozens of command line arguments you're better of with running from an external terminal window, instead of modifying the arguments all over again in Run Settings when you need them changed. For this case, we'll just want to run nmap with the version argument, <em>./nmap -V:</em>
+<ol>
+<li>In the <em>Executable:</em> text box input <em>./nmap</em>.</li>
+<li>In the <em>Arguments:</em> text box input <em>-V.</em></li>
+<li>Enable the <em>Run in Terminal</em> checkbox.<a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-5.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-5-500x381.png" alt="" title="qt-creator-step-5" /></a><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-5.png"></a></li>
+</ol>
+</li>
+<li>Switch over to the <strong>Edit</strong> mode on the left sidebar and press Ctrl^Shift^s to save your changes and start Building by pressing Ctrl^b.<a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-6.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-6-500x381.png" alt="" title="qt-creator-step-6" /></a><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-6.png"></a></li>
+</ol>
+<p>Wait for the build to finish and you are ready to run your executable by pressing Ctrl^r. In Nmap's case you should see a window popping with Nmap version output:</p>
+<p><a href="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-7.png"><img src="https://shinnok.com/rants/2011/07/using-the-qt-creator-ide-with-non-qt-projects/images/qt-creator-step-7-500x381.png" alt="" title="qt-creator-step-7" /></a></p>
+<p>That's it! This is how simple it is to use Qt Creator with a project like Nmap, that has nothing to do with Qt or <a href="https://doc.qt.nokia.com/latest/qmake-manual.html">qmake</a> whatsoever, all you need to do, is know a little bit about the specific project's build process and toolchain and describe them to Qt Creator as build steps.</p>
+<p>I've been using this process on many non Qt projects like <a href="https://www.openwall.com/john/">John the Ripper</a>, <a href="https://code.google.com/p/skipfish/">skipfish</a>, <a href="https://forum.vcmi.eu/portal.php">VCMI</a>(Heroes 3 oss clone), <a href="https://www.gnu.org/software/coreutils/">GNU Coreutils</a> and many more besides Nmap, of course, projects which are in both C and C++ and all I can say is that Qt Creator helped me a lot in the cases where a text editor didn't(and shouldn't try to) excel at. None of the other choices available as free and open source IDE's out there could match Qt Creator in my opinion and I really hope that the Creator will continue in the same manner it has so far, free and open source, cross-platform, actively developed and supported, flexible and not locked to the Qt framework. Here are other alternatives to Qt Creator that I've used in the paste and still use from time to time for specific certain tasks that they do well besides Qt Creator and adhere at least to the open source, cross-platform and good for native development rules:  <a href="https://kdevelop.org/">KDevelop</a>, <a href="https://www.codeblocks.org/">Code::Blocks</a>, <a href="https://www.anjuta.org/">Anjuta</a> and <a href="https://www.geany.org/">Geany</a> (no, I'm not going to mention Eclipse and Netbeans since they are not that good for native programming).</p>
+<p>All in all, Qt Creator is a great IDE for general C/C++ development and even if it can't currently beat the behemoth that is Visual Studio in certain aspects, it wouldn't even be fair to compare them until Visual Studio will strive for cross platform compatibility, multiple compilers and debuggers support or the ability to use multiple revision control systems.</p>
+<p>Give it <a href="https://qt.nokia.com/products/developer-tools/">a spin</a>, you won't regret.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

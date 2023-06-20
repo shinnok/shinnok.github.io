@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2009&#x2F;03&#x2F;everyone-is-a-developer-nowadays&#x2F;">Everyone is a developer nowadays</a>
+</h2>
+<p class="subtitle"><strong>2009-03-08</strong></p>
+</div>
+<div class="item">
+<blockquote>
+<p>Tom Hawkins wrote: &gt; <em>Such a database would help me counter by boss's</em> &gt; <em>argument that &quot;it's impossible to find and hire Haskell programmers.&quot;</em> &gt; &gt; There was a thread last week where someone asked who would be interested in a hypothetical Haskell job. He got about 20 positive responses. This agrees with the experience of Microsoft Research in 2006 when they advertised for a third person to help with GHC development. They also had about 20 applicants.</p>
+<p>So next time I hear the &quot;you can't get the programmers&quot; line I'm going to respond with something like this:</p>
+<p>&quot;If you post an advert for a Haskell developer you will get 20 applicants. All of those people will be the kind of developer who learns new programming languages to improve their own abilities and stretch themselves, because nobody yet learns Haskell just to get a job.</p>
+<p>&quot;If you post an advert for a Java developer you will get 200 applicants. Most of them will be the kind of developer who learned Java because there are lots of Java jobs out there, and as long as they know enough to hold down a job then they see no reason to learn anything.&quot;</p>
+<p>Paul. <a href="https://www.haskell.org/pipermail/haskell-cafe/2009-January/054072.html">from here</a></p>
+</blockquote>
+<p>Although that is not entirely true since Haskell is taught in  functional programming college classes around the world you must ignore the Haskell orientation of the statements and get the general idea, which i will try to explain the way i see it:</p>
+<p>There are <strong>herds</strong> of web, java, c# <em>developers</em> out there and i mean <strong>lots and lots of them</strong>. Being a developer/programmer is not a privileged nor a valued position anymore nowadays, but instead, being a good programmer, has become a privilege and a problem too. The amount of bad code(from all standpoints) that you can find lying around the net or in closed source applications is of astronomical proportions and what is disgusting is the fact the individuals to whom the code belongs consider themselves <em>Professional Developers/Programmers</em>. This is a problem now and it will develop even more in the future as longs as the IT industry continues to expand and of course as long as <em>everyone owns an IT company</em> and also <em>everyone is a programmer</em>. Just as a simple analogy: Take into account the massive explosion of Web stuff in the last years(WEB 2.0 PHP,ASP,JS,SQL). What do you think came exactly after that? The massive explosion of WEB vulnerabilities and total chaos in the WEB world. And that is because everyone has a website to show the world even the most stupidest things that exist on this earth. If you don't have a website than don't worry proceed to the next two statements. Everyone of course knows how to code a website, especially a WEB2.0 website using of course php, asp, js, sql. And if someone doesn't know how to code his own website then that's not a problem...he most certainly has a programmer guru friend and if that is not the case then again don't worry because everyone has a WEB Development Company and will do a crappy lame site in exchange for money in no time.  Oh but where do i put my website? Well if your not a leet admin too, then again relax, everyone has a Hosting Company too nowadays so in exchange for money you will get fucked up hosting too, but you can't notice it because you don't have the <em>skillz</em> excluding the case when a lame domain hosted along yours and hundreds others on the same crappy server will lead to the pwnage of all of the webpages hosted on it, because then you will notice.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

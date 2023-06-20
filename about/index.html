@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<center>
+    <img src="/img/shinnok.png" width="300px" alt="Shinnok image"></img>
+    <a class="vcardbutton" href="https://about.shinnok.com">VCARD</a>
+</center>
+<br />
+<div class="item" id="whoami">
+    <h1>Who am I</h1>
+    <p>My name is Teodor Mircea Ionita, born in beautiful Romania. I wander the inter-tubes using the nom-de-guerre <i>Shinnok</i>. I chose this alias way back when I was a young netizen and one of my favorite games at the time was <a href="https://en.wikipedia.org/wiki/Mortal_Kombat" target="_blank">Mortal Kombat</a>. <a href="https://mortalkombat.wikia.com/wiki/Shinnok" target="_blank">Shinnok</a> was the ultimate boss character, a fallen elder god, with incredible super-powers and the ability to impersonate any other character in the game. In my opinion, Shinnok was the best character so naturally, I started using that handle online and I stuck with it till this day.
+    </p>
+</div>
+<div class="item" id="occupation">
+    <h1>What do I do</h1>
+    <p>I'm a passionate Open Source advocate and C++ developer, Unix monk and opinionated sysadmin. I’ve been called an OSS head at least once, thus I tend to think of myself as a passionate community member and an eager contributor to several FLOSS communities/projects like MariaDB, LibreOffice, Nmap Security Suite, Openwall and the Qt project. I also try and play my part via technical blogging, participation at events and conferences, as well as involvement in knowledge and code exchange based communities like <a href="https://stackoverflow.com/users/473612/shinnok" target="_blank">StackOverflow</a> and <a href="https://github.com/shinnok" target="_blank">GitHub</a>. As a <a href="https://www.openhub.net/accounts/shinnok">seeder</a> to the ecosystem I authored several open-source tools, like <a href="https://github.com/shinnok/johnny" target="_blank">Johnny</a> a front-end to John the Ripper password security testing suite and <a href="https://github.com/Tarsnap/tarsnap-gui" target="_blank">Tarsnap GUI</a>, a cross-platform desktop application for the Tarsnap secure online backup service. See <a href="/projects.html">projects</a> section for more.</p>
+
+    <p>I am also into independent security research focusing on areas like network/computer security, reverse engineering, vulnerability research and exploit development, fuzzing, malware analysis, forensics and network vulnerabilities and exploitation. I guess I'm interested and get involved in a lot of challenging and exciting opportunities in information technology and security, software development and the internet. Lately I've also been toying with embedded systems and open hardware.</p>
+
+    <p>I might have a passion for gathering knowledge on literally everything cool in this universe, studying and researching on a wide variety of topics and exploring new fields and ideas does not intimidate me. <a href="https://www.elise.com/quotes/heinlein_-_specialization_is_for_insects" target="blank">Specialization is for insects.</a> :-)</p>
+
+    <p>If you want to know me more poke at the <a href="/rants/">Rants</a> section of the website, it's my personal blog.</p>
+</div>
+<div class="item" id="about-website">
+    <h1>What about this website</h1>
+    <p>I use this website as a repository to publish and keep track of my public projects and to collect useful material (like cheatsheets or code snippets) aggregated into a single place. It's nice to have what I find useful somewhere handy and easily accessible and hopefully, some other people will find it that way too. I occasionally announce, write or post interesting or funny thoughts on my blog, <b>Shinnok&#39;s Rants</b>, which is available under <a href="/rants/">/rants/</a>.</p>
+    <p>My (really) old website, <b>#The Code</b>, can be found <a href="https://thecode.shinnok.com" target="blank">here</a>.</p>
+</div>
+<div class="item" id="references">
+    <h1>References</h1>
+        <p>GitHub : <a href="https://github.com/shinnok" target="blank">https://github.com/shinnok</a></p>
+        <p>OpenHub : <a href="https://www.openhub.net/accounts/shinnok" target="blank">https://www.openhub.net/accounts/shinnok</a></p>
+        <p>StackOverflow : <a href="https://stackoverflow.com/users/473612/shinnok" target="blank">https://stackoverflow.com/users/473612/shinnok</a></p>
+        <p>ExploitDB : <a href="https://www.exploit-db.com/author/?a=1316" target="blank">https://www.exploit-db.com/author/?a=1316</a></p>
+        <p>PacketStorm : <a href="https://packetstormsecurity.org/files/author/6647/" target="blank">https://packetstormsecurity.org/files/author/6647/</a></p>
+        <p>Milw0rm : <a href="http://www.milw0rm.com/author/1504" target="blank"><strike>http://www.milw0rm.com/author/1504</strike></a>(rip)</p>
+
+</div>
+<div class="item" id="contact">
+    <h1>Contact & Follow</h1>
+        <p>irc : shinnok on <a href="https://freenode.net/" target="blank">freenode</a> mainly on #backtrack-linux, #linux, #debian, #ubuntu, #openwall, #nmap and #qt</p>
+        <p>E-mail : <a href="https://en.wikipedia.org/wiki/ROT13" target="blank">nqzva@fuvaabx.pbz</a></p>
+        <p>PGP key : <a href="/shinnok.asc">shinnok.asc</a></p>
+        <p>Twitter : <a href="https://twitter.com/shinn0K" target="blank">https://twitter.com/shinn0K</a></p>
+</div>
+
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2015&#x2F;04&#x2F;blocking-ads-and-trackers-using-hosts&#x2F;">Blocking ads and trackers using HOSTS</a>
+</h2>
+<p class="subtitle"><strong>2015-04-05</strong></p>
+</div>
+<div class="item">
+<p>If you've stumbled across this post, you're probably familiar with adblocking extensions such as Adblock and <a href="https://github.com/gorhill/uBlock">uBlock</a>(seriously recommend the latter for a handful of <a href="https://news.ycombinator.com/item?id=8802424">reasons</a>) and most likely you're in need of a solution to take back your network and system resources as well as a need for less clutter and more privacy in your daily web ventures, however, this method for blocking ads at the browser level only tends to be quite inefficient and fairly limited. Wouldn't it be cool to also have ads and trackers blocked at the system level, including but not limited to applications like Skype, uTorrent, IE(seriously?) and other browsers or the many shareware/freeware apps that track your usage via mechanisms like Google Analytics(some use exactly that for tracking).</p>
+<p>The solution is fairly simple, we're going to use a simple hostname based block list to map undesirable domain names to either 0.0.0.0 or 127.0.0.1. In my testing on OS X, I found that 0.0.0.0 works best, that might not be the case on different operating systems. The blocking is done via the ages old hosts(<a href="https://man7.org/linux/man-pages/man5/hosts.5.html">5</a>) unix file, but still very useful mechanism for easy static ip-name mappings at the host level.</p>
+<p>The current block list that I use is hosted at <a href="https://hosts.neocities.org">hosts.neocities.org</a>. I'm not affiliated with that site and don't know who is providing it, that being said I use git to track and review changes between updates. The list is quite exhaustive, combining lists from several other sources cited in the header. I'd like to see a couple more lists combined like that from several other places(mainly the ones from uBlock would be useful), but you can then add extra lists by modifying the script fairly easily.</p>
+<p>Now the script itself, is hosted on <a href="https://gist.github.com/shinnok/dc1ab6e6a2852f0862b1">Github</a>. Please read the entire script and what I've written bellow before running the script on your system.</p>
+<script src="https://gist.github.com/shinnok/dc1ab6e6a2852f0862b1.js"></script>
+<p>Before you go on and use the script on your OS X, I really encourage to start using git in your /etc/ directory. The script won't even work without a git repo in /etc/, unless you know what you're doing and you're going to modify it to bypass that. Having a git repo in your etc directory gives you revisioning, rollback, beta-testing, review and scrutiny abilities to whatever you're doing to your etc. I do this on my workstations, laptops and servers that I manage. The added git overhead on your daily etc routines is insignificant when compared to the benefits you get when you most need them.</p>
+<p>The script is smart enough to not break your current system. What it does as part of the first time run initialization is copy your current /etc/hosts to /etc/hosts.d/hosts.1.head. All your existing localhost rules and custom rules will be maintained there. The adblocking rules will go into /etc/hosts.d/hosts.3.adblock. You can add custom mapping rules(for staging servers, local network mappings) to  hosts.2.custom.</p>
+<p>Then each time the script updates it will do the following:</p>
+<ol>
+<li>Update hosts.3.adblock with the latest rules from upstream;</li>
+<li>Concatenate the rules in /etc/hosts.d in the numeric order to your /etc/hosts;</li>
+<li>Show you a git diff of the changes and the option to commit those changes or deny to review, undo or commit yourself using git;</li>
+</ol>
+<p>The script also has some pfsense blocking rules from <a href="https://www.emergingthreats.net">www.emergingthreats.net</a> and some custom ip blocking enabled in /etc/pf.rules/ip-block.pf. This is disabled by default, you can enable it by setting the PFSENSE var to &quot;true&quot; or passing -f as argument. If you know of some other worthy and fresh ad/malware ip lists let me know.</p>
+<p>Although my script is OS X only, it's fairly easy to port it to any other UNIX system(I welcome patches to the main script via Github), having such a solution for the Windows platform would be cool too. Maybe someone reading this can weigh in with their solution or insight? Would it work fair enough, is cygwin the only way for automating this? Nonetheless, stay tuned, since I have a similar router solution(AsusWRT, DD-WRT) coming up soon, that steps up the game a notch and provides blocking for your entire network, though it surely doesn't deprecate this host level solution (on a laptop for e.g. that is frequently switching networks).</p>
+<p>Pros for this setup:</p>
+<ol>
+<li>Easy setup and update (when compared to a firewall or a custom dns);</li>
+<li>Cross-platform and cross-application solution;</li>
+<li>Faster and less intrusive(also no https mitm) than proxy solutions(such as Privoxy);</li>
+<li>Easy to temporarily disable: just <code>cp /etc/hosts.d/hosts.1.head /etc/hosts</code> and to restore <code>git checkout /etc/hosts</code>;</li>
+</ol>
+<p>Caveats:</p>
+<ol>
+<li>On some operating systems hosts files with tens of thousands of rules might slow name resolution up to a certain degree. In my usage with over 50000 rules, OS X and Linux is quite fine in that regard. If you find that such is your case, maybe using a dns server or firewall rules is better for you;</li>
+<li>Some blank spaces, containers, divs or unresolved error messages will take the place of the ads themselves in sites and apps that don't handle failure very well. You can get rid of the browser related blanks at least by using <a href="https://github.com/gorhill/uBlock">uBlock</a> extension with just the cosmetic rules enabled(in the extension Settings);</li>
+<li>Related to the previous one, you might experience some failures in certain web related functionality(fairly limited though). Most of them will be social related or news sites that use ad nag pages before they redirect you to the article content itself. Personally I don't care about them and as soon as I hit such a road block I close it and move on. The benefit of more resources and network bandwidth for my system as well as the increased privacy and less clutter in general, totally trumps any minor drawback like this;</li>
+<li>The script relies on the <em>links(<a href="https://linux.die.net/man/1/links">1</a>)</em>(or <em>elinks</em>) tool to parse the html page at hosts.neocities.org and extract only the text. On OS X I use <a href="https://brew.sh">homebrew</a> to install additional tools that I need. If you have a better solid solution that relies only on coreutils or other commonly installed shell utilities let me know;</li>
+</ol>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

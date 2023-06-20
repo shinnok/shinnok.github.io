@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;07&#x2F;cool-open-source-games-you-should-contribute-to&#x2F;">Cool Open Source Games you should contribute to</a>
+</h2>
+<p class="subtitle"><strong>2011-07-18</strong></p>
+</div>
+<div class="item">
+<p><a href="https://en.wikipedia.org/wiki/DreamHack"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/dreamhack-lan-party.jpg" alt="" title="dreamhack-lan-party" /></a></p>
+<p>[Update1 20-07-2011] As per numerous requests, the games list has been updated with some more cool games that I've missed. They have been prepended  to the top of the list and as before, they are in no particular order.</p>
+<p>While the popular conception when it comes to games for Linux is that they are almost non-existent, this is only true when it comes to big and popular commercial franchises that are backed up by giant video game studios and publishers like EA Games, Blizzard and Konami. On the other hand, Linux(and other platforms like *BSD) benefits from a myriad of open source and free games, some smaller for casual gaming and others more impressive like MMORPG's and FPS's that could compete with some of the commercial games out there in their branch either in the current state or given some fresh amount of contribution. Open source games are a convoluted topic and are somewhat special and unlike a traditional Open Source project because they require much more then code contribution, which foss minded hackers and geeks are eager to contribute anytime during the day. The three major issues with open source games that are apart from a traditional open source project are:</p>
+<p>1. Harder to steer and govern - Traditional open source projects usually have a specific purpose and use case, thus there's not much to argue about why and if a specific tool should do what it does. At most there is a <em>how</em> attached to it, like how to best implement that specific functionality or how to interact with the user better. When it comes to games there's game behavior and mechanics that are to be settled upon, these are complex and intricate issues that involve ethics, human emotions, economy, public perception and many more aspects that given a set of 10 people to decide upon you're most likely to come up with 5 different solutions and opinions then a single one. Some open source games have suffered from this and more will in future, because these issues pertain to human aspects and perception rather then technical ones.</p>
+<p>There's not much to argue about whether the best algorithm should be used over an existing crappy implementation, but there's lots to argue about whether a character class should be more powerful then another or if health and mana potions should be acquirable at the market or at all. In these cases, a more <em>Nazzi</em>, restrained and centralized government would have worked better then the open one as well as more defined game behavior and mechanic in the first place.</p>
+<p>So if you're the master of an open source game, stop paying attention to each and every comment and complaint on the forums and irc channels or even better, stop putting to heart every single argument you stumble upon, you're doing a great job and you know it, have a plan and stick to it. Ignoring useless flames and rants and random people telling you what to do or what your game should be like is not the right path to take in this case. Of course you should not be an <a href="https://blog.aurel32.net/?p=47">ass</a>(<a href="https://linux.slashdot.org/story/09/05/06/2050216/Debian-Switching-From-Glibc-To-Eglibc">2</a>,<a href="https://linuxhaters.blogspot.com/2009/05/tribute.html">3</a>) or take this advice to the extreme since that will hurt your project even more than doing good or even put you in danger of sporks.</p>
+<p>2. Games are multifaceted productions - that involve game design, graphic design, media and 3D content, story telling, script planning and development, besides the usual code. When it comes to games, code is not the problem, content is. There are lots of hackers willing to throw some code at a cool open source project, however, there aren't that many game designers or graphics designers that are willing to contribute in their free time just because it's fun or intriguing. Just not long ago, the only open source or royalty free media that you could get your hands on were icon packs and wallpapers.</p>
+<p>Thus if it happens that your a game designer, graphic designer, media creator or story and script planner and you're complaining about the lack of games on the Linux platform, remember that you can change that, with minor chunks of your free time applied to the right Open Source game or at least apply to a game studio that ships cross platform games. Stop complaining, take action.</p>
+<p>3. Most games nowadays require some form of online interaction - be it either for ranking and competing or multi-player gaming or availability, single player games are not that fun anymore. You have to have some form of online or social interaction within the game for it to last. Zelda, Doom and Duke3D were cool and fun as long as there were no real alternatives. As soon as you get World of Warcraft, Starcraft and  Halo you'll never look back until melancholy for old times and old school strikes. So what does this online interaction involve? Well it involves data storage, bandwidth, servers, maintenance and web development. These resources don't come free in anyway, form or shape and they mostly cost money. The guy working on the C/C++ core engine of the game or the shaders/3D guy isn't likely(or have time) to maintain a web server or do web development either. You need donations  for the hardware and network part as well as contribution for maintenance and web development.</p>
+<p>If you're the CEO or have influence over a hosting or isp company you could help Open Source Gaming by donating resources to those games that need it. If you're a web developer, designer or sysadmin you can help in building and maintaining the infrastructure that a multiplayer game needs.</p>
+<p>So that's what I think about Open Source Games and why they are a special breed and also tried to appeal to those that could help in changing history and the status quo. Open source games are fun and addictive to contribute to and you should give it a try, be it either code or game content. That's why I'm going to list some of the coolest and/or popular Open Source games out there to help you make your mind as well as prove to you that, yes, there are great Open Source games:</p>
+<h2 id="xonotic"><a href="https://en.wikipedia.org/wiki/Xonotic">Xonotic</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/xonotic.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/xonotic-500x312.jpg" alt="" title="xonotic" /></a></p>
+<p><a href="https://www.xonotic.org/">Xonotic</a> is a free (GPL), fast-paced first-person shooter that works on Microsoft Windows, Mac OSX and Linux. Xonotic is a direct successor of the <a href="https://alientrap.org/nexuiz">Nexuiz Project</a>. Xonotic places focus on community involvement as its principal driving force and structures itself to respect that. The aim of Xonotic is to become the best possible open-source FPS (first-person-shooter) of its kind.</p>
+<p><a href="https://www.youtube.com/watch?v=5SZgyP-0C0Q">https://www.youtube.com/watch?v=5SZgyP-0C0Q</a></p>
+<ul>
+<li>More screenshots: <a href="https://www.xonotic.org/media/xonotic-screenshots/">https://www.xonotic.org/media/xonotic-screenshots/</a></li>
+<li>Homepage: <a href="https://www.xonotic.org/">https://www.xonotic.org/</a></li>
+<li>Source Code: <a href="https://dev.xonotic.org/projects/xonotic/wiki/Repository_Access">https://dev.xonotic.org/projects/xonotic/wiki/Repository_Access</a> (<a href="https://dev.xonotic.org/projects/xonotic/wiki/Introduction_to_QuakeC">QuakeC</a>)</li>
+</ul>
+<h2 id="zero-ballistics"><a href="https://www.zeroballistics.com/">Zero Ballistics</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/zero-ballistics.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/zero-ballistics-500x375.jpg" alt="" title="zero-ballistics" /></a></p>
+<p>Zero Ballistics is a unique blend of multiplayer first person shooter and tank combat game. Easy to learn, difficult to master was our mantra during the development of the game. Set in lush alpine environments covering all seasons, playing Zero Ballistics is as thrilling as it is relaxing.</p>
+<p><a href="https://www.youtube.com/watch?v=xEvaTjxp_bo">https://www.youtube.com/watch?v=xEvaTjxp_bo</a></p>
+<ul>
+<li>More screenshots: <a href="https://www.zeroballistics.com/screenshots.php">https://www.zeroballistics.com/screenshots.php</a></li>
+<li>Homepage: <a href="https://www.zeroballistics.com/">https://www.zeroballistics.com/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/zeroballistics/">https://sourceforge.net/projects/zeroballistics/</a> (C++)</li>
+</ul>
+<h2 id="speed-dreams"><a href="https://www.speed-dreams.org/">Speed Dreams</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/speed-dreams.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/speed-dreams-500x312.jpg" alt="" title="speed-dreams" /></a></p>
+<p>Speed Dreams is a 3d cross-platform, open source motorsport simulation and racing game. It is released under the GNU General Public License (GPL). Speed Dreams is a fork of the open racing car simulator Torcs, aiming to implement exciting new features, cars, tracks and AI opponents to make a more enjoyable game for the player, as well as constantly improving visual and physics realism.</p>
+<p><a href="https://www.youtube.com/watch?v=pRhTv3gaNwA">https://www.youtube.com/watch?v=pRhTv3gaNwA</a></p>
+<ul>
+<li>More screenshots: <a href="https://www.speed-dreams.org/#media">https://www.speed-dreams.org/#media</a></li>
+<li>Homepage: <a href="https://www.speed-dreams.org/">https://www.speed-dreams.org/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/speed-dreams/">https://sourceforge.net/projects/speed-dreams/</a> (C++)</li>
+</ul>
+<h2 id="freedroidrpg"><a href="https://www.freedroid.org/">FreedroidRPG</a></h2>
+<h2 id=""><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/freedroidrpg.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/freedroidrpg-500x374.jpg" alt="" title="freedroidrpg" /></a></h2>
+<p>Freedroid RPG is an RPG with isometric graphics. In it, the player is Tux, who must fight rebelling robots in order to restore peace to humankind. To do so, Tux may take over robots in a minigame based off the classic game Paradroid, or may simply blast them to pieces with a weapon.</p>
+<ul>
+<li>More screenshots: <a href="https://www.freedroid.org/screenshots">https://www.freedroid.org/screenshots</a></li>
+<li>Homepage: <a href="https://www.freedroid.org/">https://www.freedroid.org/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/freedroid/">https://sourceforge.net/projects/freedroid/</a> (core: C, scripting: Lua)</li>
+</ul>
+<h2 id="s-c-o-u-r-g-e-2"><a href="https://scourgeweb.org/">S.C.O.U.R.G.E. 2</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/scourge2.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/scourge2-500x374.jpg" alt="" title="scourge2" /></a></p>
+<p>S.C.O.U.R.G.E. 2 is a cross platform, open source rogue-like game in the fine tradition of NetHack and Moria It sports a graphical front-end, similar to glHack or the Falcon's eye.The design of the 3D UI is an attempt at the best of both worlds from old to new: It lets you rotate the view, zoom in/out, view special effects, and more with the feeling of the old-school isometric games like Exult or Woodward.</p>
+<ul>
+<li>More screenshots: <a href="https://scourgeweb.org/tiki-galleries.php">https://scourgeweb.org/tiki-galleries.php</a></li>
+<li>Homepage: <a href="https://scourgeweb.org/">https://scourgeweb.org</a></li>
+<li>Source Code: <a href="https://bitbucket.org/uzudil/scourge2/">https://bitbucket.org/uzudil/scourge2/</a> (Java)</li>
+</ul>
+<h2 id="secret-maryo-chronicles"><a href="https://en.wikipedia.org/wiki/Secret_Maryo_Chronicles">Secret Maryo Chronicles</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/secretmaryo.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/secretmaryo-500x375.jpg" alt="" title="secretmaryo" /></a></p>
+<p>Secret Maryo Chronicles is an Open Source two-dimensional platform game with a design similar to classic computer games. SMC has computer support to a great degree by using an accelerated <a href="https://www.opengl.org/">Open Graphics Library</a> for the best possible graphic design and stock performance.</p>
+<ul>
+<li>More screenshots: <a href="https://www.secretmaryo.org/index.php?page=media">https://www.secretmaryo.org/index.php?page=media</a></li>
+<li>Homepage: <a href="https://www.secretmaryo.org/">https://www.secretmaryo.org/</a></li>
+<li>Source Code: <a href="https://github.com/FluXy/SMC">https://github.com/FluXy/SMC</a> (C++)</li>
+</ul>
+<h2 id="danger-from-the-deep"><a href="https://en.wikipedia.org/wiki/Danger_from_the_Deep">Danger from the Deep</a></h2>
+<h2 id="-1"><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/danger-deep.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/danger-deep-500x375.jpg" alt="" title="danger-deep" /></a></h2>
+<p>Danger from the Deep is an open-source World War II German U-boat simulation, striving for technical and historical accuracy.</p>
+<ul>
+<li>More screenshots: <a href="https://sourceforge.net/projects/dangerdeep/">https://sourceforge.net/projects/dangerdeep/</a></li>
+<li>Homepage: <a href="https://sourceforge.net/projects/dangerdeep/">https://sourceforge.net/projects/dangerdeep/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/dangerdeep/">https://sourceforge.net/projects/dangerdeep/</a> (C++)</li>
+</ul>
+<h2 id="red-eclipse"><a href="https://en.wikipedia.org/wiki/Red_Eclipse">Red Eclipse</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/red-eclipse.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/red-eclipse-500x375.jpg" alt="" title="red-eclipse" /></a></p>
+<p>The game is a single-player and multi-player first-person ego-shooter, built as a total conversion of <a href="https://www.cubeengine.com/">Cube Engine 2</a>, which lends itself toward a balanced gameplay, completely at the control of map makers, while maintaining a general theme of agility in a variety of environments.</p>
+<p><a href="https://www.youtube.com/watch?v=mjHVb3z72tM">https://www.youtube.com/watch?v=mjHVb3z72tM</a></p>
+<ul>
+<li>More screenshots: <a href="https://sourceforge.net/apps/mediawiki/redeclipse/index.php?title=Ides_screenshots">https://sourceforge.net/apps/mediawiki/redeclipse/index.php?title=Ides_screenshots</a></li>
+<li>Homepage: <a href="https://www.redeclipse.net/">https://www.redeclipse.net/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/redeclipse/">https://sourceforge.net/projects/redeclipse/</a> (C++)</li>
+</ul>
+<h2 id="widelands"><a href="https://en.wikipedia.org/wiki/Widelands">Widelands</a>   </h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/widelands.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/widelands-500x312.jpg" alt="" title="widelands" /></a></p>
+<p>Widelands is an open source (GPLed) real-time strategy game. It is built upon the <a href="https://www.libsdl.org/">SDL</a> and other open source libraries and is (and will always be) under heavy development. If you knew Settlers I &amp; II™ (© Bluebyte), then you already have a rough idea what Widelands is all about because widelands is heavily inspired by those two games.</p>
+<ul>
+<li>More screenshots: <a href="https://wl.widelands.org/screenshots/">https://wl.widelands.org/screenshots/</a></li>
+<li>Homepage: <a href="https://wl.widelands.org/">https://wl.widelands.org/</a></li>
+<li>Source Code: <a href="https://code.launchpad.net/widelands">https://code.launchpad.net/widelands</a> (C++)</li>
+</ul>
+<h2 id="unknown-horizons"><a href="https://en.wikipedia.org/wiki/Unknown_Horizons">Unknown Horizons</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/unknown-horizons.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/unknown-horizons-500x281.jpg" alt="" title="unknown-horizons" /></a></p>
+<p>Unknown Horizons is a 2D realtime strategy simulation with an emphasis on economy and city building. Expand your small settlement to a strong and wealthy colony, collect taxes and supply your inhabitants with valuable goods. Increase your power with a well balanced economy and with strategic trade and diplomacy.</p>
+<ul>
+<li>More screenshots: <a href="https://www.unknown-horizons.org/media/screenshot-gallery/">https://www.unknown-horizons.org/media/screenshot-gallery/</a></li>
+<li>Homepage: <a href="https://www.unknown-horizons.org/">https://www.unknown-horizons.org</a></li>
+<li>Source Code: <a href="https://github.com/unknown-horizons/">https://github.com/unknown-horizons/</a> (Python)</li>
+</ul>
+<h2 id="freecol"><a href="https://en.wikipedia.org/wiki/Freecol">FreeCol</a></h2>
+<h2 id="-2"><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/freecol.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/freecol-500x423.jpg" alt="" title="freecol" /></a></h2>
+<p>FreeCol is a turn-based strategy game based on the old game<a href="https://www.freecol.org/about.html#original">Colonization</a>, and similar to Civilization. The objective of the game is to create an independent nation.  You start with only a few colonists defying the stormy seas in their search for new land. Will you guide them on the <em>Colonization of a New World</em>?</p>
+<ul>
+<li>More screenshots: <a href="https://www.freecol.org/screenshots.html">https://www.freecol.org/screenshots.html</a></li>
+<li>Homepage: <a href="https://www.freecol.org/">https://www.freecol.org</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/freecol/">https://sourceforge.net/projects/freecol/</a> (Java)</li>
+</ul>
+<h2 id="prboom"><a href="https://en.wikipedia.org/wiki/Prboom">PrBoom</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/prboom.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/prboom-500x371.jpg" alt="" title="prboom" /></a></p>
+<p>PrBoom, the purest Doom-Port? Aims to be the most stable Doom port with the highest compatibility to the major Doom versions. Highres software and nice OpenGL rendering. Full Boom and most if not all MBF features.</p>
+<ul>
+<li>More screenshots: <a href="https://sourceforge.net/projects/prboom/">https://sourceforge.net/projects/prboom/</a></li>
+<li>Homepage: <a href="https://prboom.sourceforge.net/">https://prboom.sourceforge.net/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/prboom/">https://sourceforge.net/projects/prboom/</a> (C)</li>
+</ul>
+<h2 id="eduke32"><a href="https://eduke32.com/">EDuke32</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/eduke32.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/eduke32-500x312.jpg" alt="" title="eduke32" /></a></p>
+<p>EDuke32 is an awesome, free homebrew game engine and source port of the classic PC first person shooter_Duke Nukem 3D_— <em>Duke3D</em> for short—to Windows, Linux, Mac OS X, FreeBSD, several handhelds, your family toaster, and to your girlfriend's vibrator. We've added thousands of cool and useful features and upgrades for regular players and additional editing capabilities and scripting extensions for homebrew developers and mod creators. EDuke32 is completely free, open source software.</p>
+<p><a href="https://www.youtube.com/watch?v=Al7i_v1a0m0">https://www.youtube.com/watch?v=Al7i_v1a0m0</a></p>
+<ul>
+<li>More screenshots: <a href="https://eduke32.com/">https://eduke32.com/</a></li>
+<li>Homepage: <a href="https://eduke32.com/">https://eduke32.com/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/eduke32/">https://sourceforge.net/projects/eduke32/</a> (C)</li>
+</ul>
+<h2 id="vcmi"><a href="https://forum.vcmi.eu/portal.php">VCMI</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/vcmi.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/vcmi-500x287.jpg" alt="" title="vcmi" /></a></p>
+<p>VCMI Project - Heroes 3: WoG recreated -We want to rewrite the entire H3 engine (VCMI is NOT another mod) giving it new possibilities. Few years of intensive work resulted in creating application with impressive amount of features.</p>
+<ul>
+<li>More screenshots: <a href="https://forum.vcmi.eu/portal.php">https://forum.vcmi.eu/portal.php</a></li>
+<li>Homepage: <a href="https://forum.vcmi.eu/portal.php">https://forum.vcmi.eu/portal.php</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/vcmi/">https://sourceforge.net/projects/vcmi/</a> (C++)</li>
+</ul>
+<h2 id="ioquake3"><a href="https://en.wikipedia.org/wiki/Ioquake3#ioquake3">ioquake3</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/ioquake3.jpeg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/ioquake3-500x391.jpg" alt="" title="ioquake3" /></a></p>
+<p>This project, <em>ioquake3</em> (or <em>ioq3</em> for short,) aims to build upon id Software's Quake 3 source code release. The source code was released on August 20, 2005 under the GPLv2. Since then, we have been cleaning up, fixing bugs, and adding features.</p>
+<ul>
+<li>More screenshots: <a href="https://ioquake3.org/extras/media/">https://ioquake3.org/extras/media/</a></li>
+<li>Homepage: <a href="https://ioquake3.org/">https://ioquake3.org/</a></li>
+<li>Source Code: <a href="https://ioquake3.org/get-it/source-codes/">https://ioquake3.org/get-it/source-codes/</a> (C)</li>
+</ul>
+<h2 id="openarena"><a href="https://en.wikipedia.org/wiki/Open_Arena">OpenArena</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/openarena.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/openarena-500x281.jpg" alt="" title="openarena" /></a></p>
+<p>OpenArena is a community-produced deathmatch FPS based on GPL idTech3 technology. There are many game types supported including Free For All, Capture The Flag, Domination, Overload, Harvester, and more. There are 17 unique player models to choose from and 12 weapons. OpenArena is based on the ioquake3 engine mentioned above.</p>
+<ul>
+<li>More screenshots: <a href="https://openarena.ws/page.php?12">https://openarena.ws/page.php?12</a></li>
+<li>Homepage: <a href="https://openarena.ws/">https://openarena.ws</a></li>
+<li>Source Code: <a href="https://openarena.ws/svn/">https://openarena.ws/svn/</a> (C)</li>
+</ul>
+<h2 id="planeshift"><a href="https://en.wikipedia.org/wiki/PlaneShift_(video_game)">Planeshift</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/planeshift.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/planeshift-500x375.jpg" alt="" title="planeshift" /></a></p>
+<p>PlaneShift is a Role Playing Game immersed into a 3D virtual fantasy world which is to play. Fully free means you will have no surprises of premium content which will limit your gameplay or unbalance the game. There are no limitations in skills, ranks, abilities, items you can gain with your free account. There are no time limits or additional constraints. Servers and bandwidth will be donated by sponsors. PlaneShift is made by a group of RPG enthusiasts and not by a commercial company. This allows us to expand the game without any constraint or limitation. PlaneShift is <a href="https://www.planeshift.it/sources.html">Open Source</a> for the client and server code, so everyone can <a href="https://www.planeshift.it/recruitment.html">contribute to its development</a>!</p>
+<p><a href="https://www.youtube.com/watch?v=S6v-sPejxdo">https://www.youtube.com/watch?v=S6v-sPejxdo</a></p>
+<ul>
+<li>More screenshots: <a href="https://www.planeshift.it/screenshots.html">https://www.planeshift.it/screenshots.html</a></li>
+<li>Homepage: <a href="https://www.planeshift.it/index.php">https://www.planeshift.it/index.php</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/planeshift/">https://sourceforge.net/projects/planeshift/</a> (C++)</li>
+</ul>
+<h2 id="xmoto"><a href="https://en.wikipedia.org/wiki/Xmoto">XMoto</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/xmoto.png"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/xmoto-500x375.png" alt="" title="xmoto" /></a></p>
+<p>X-Moto is a challenging 2D motocross platform game, where physics plays an all important role in the gameplay. You need to control your bike to its limits, if you want to have a chance to finish the most difficult challenges.</p>
+<ul>
+<li>More screenshots: <a href="https://wiki.xmoto.tuxfamily.org/index.php?title=Screenshots">https://wiki.xmoto.tuxfamily.org/index.php?title=Screenshots</a></li>
+<li>Homepage: <a href="https://xmoto.tuxfamily.org/">https://xmoto.tuxfamily.org/</a></li>
+<li>Source Code: <a href="https://svn.tuxfamily.org/viewvc.cgi/xmoto_xmoto/">https://svn.tuxfamily.org/viewvc.cgi/xmoto_xmoto/</a> (C++)</li>
+</ul>
+<h2 id="worldforge"><a href="https://en.wikipedia.org/wiki/WorldForge">WorldForge</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/worldforge.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/worldforge-500x375.jpg" alt="" title="worldforge" /></a></p>
+<p>The WorldForge project is about building tools to allow the construction of online role-playing games. The original community came together over a decade ago, out of a desire to create a game that was better and freer than Ultima Online. But as the aims of the project evolved and became more ambitious, the overall goal changed. Instead of one game, we instead decided build a flexible framework that would allow everyone to contribute their own unique ideas and goals to the Worldforge project, allowing a multitude of games to be created.</p>
+<ul>
+<li>More screenshots: <a href="https://worldforge.org/project/screenshots/gallery">https://worldforge.org/project/screenshots/gallery</a></li>
+<li>Homepage: <a href="https://worldforge.org/">https://worldforge.org/</a></li>
+<li>Source Code: <a href="https://github.com/worldforge">https://github.com/worldforge</a> (C++)</li>
+</ul>
+<h2 id="vega-strike"><a href="https://en.wikipedia.org/wiki/Vega_strike">Vega Strike</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/vegastrike.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/vegastrike-500x375.jpg" alt="" title="vegastrike" /></a></p>
+<p>Vega Strike is an Open Source 3D Action-Space-Sim that lets you trade, fight, and explore in a vast universe. Vega Strike is built on top of OpenGL and runs on Win/Lin/Mac platforms. Vega Strike (the game) is currently in a playable state, but both game engine and dataset are under continued development.</p>
+<ul>
+<li>More screenshots: <a href="https://vegastrike.sourceforge.net/forums/cpg/">https://vegastrike.sourceforge.net/forums/cpg/</a></li>
+<li>Homepage: <a href="https://vegastrike.sourceforge.net/">https://vegastrike.sourceforge.net/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/vegastrike/">https://sourceforge.net/projects/vegastrike/</a> (C++)</li>
+</ul>
+<h2 id="warsow"><a href="https://en.wikipedia.org/wiki/Warsow_(video_game)">Warsow</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/warsow.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/warsow-500x312.jpg" alt="" title="warsow" /></a></p>
+<p>Warsow is a completely free fastpaced first-person shooter (FPS) set in a futuristic cartoon-like world for Windows, Linux and Mac OS X.</p>
+<p><a href="https://www.youtube.com/watch?v=vtJKrIngTIs">https://www.youtube.com/watch?v=vtJKrIngTIs</a></p>
+<ul>
+<li>More screenshots: <a href="https://www.warsow.net/screenshots/">https://www.warsow.net/screenshots/</a></li>
+<li>Homepage: <a href="https://www.warsow.net/">https://www.warsow.net</a></li>
+<li>Source Code: <a href="https://www.warsow.net/download/">https://www.warsow.net/download/</a> (C/C++)</li>
+</ul>
+<h2 id="the-ur-quan-masters"><strong><a href="https://en.wikipedia.org/wiki/The_Ur-Quan_Masters#The_Ur-Quan_Masters">The Ur-Quan Masters</a></strong></h2>
+<h2 id="-3"> <strong><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/sc2-the-ur-quan-masters.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/sc2-the-ur-quan-masters-500x375.jpg" alt="" title="sc2-the-ur-quan-masters" /></a></strong></h2>
+<p>The project started in August 2002, when <a href="https://toysforbob.com/">Toys For Bob</a> released the partially ported sources of <a href="https://www.star-control.com/sc2/">Star Control 2</a> 3DO version to the fan community. Our goal is to port this wonderful game to current personal computers and operating systems. It is and will remain 100% free of charge, and anyone can contribute to the project and thus help make it even better.</p>
+<ul>
+<li>More screenshots: <a href="https://sc2.sourceforge.net/screenshots.php">https://sc2.sourceforge.net/screenshots.php</a></li>
+<li>Homepage: <a href="https://sc2.sourceforge.net/">https://sc2.sourceforge.net/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/sc2/">https://sourceforge.net/projects/sc2/</a> (C)</li>
+</ul>
+<h2 id="spring"><a href="https://en.wikipedia.org/wiki/Spring_(game_engine)">Spring</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/spring.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/spring-500x400.jpg" alt="" title="spring" /></a></p>
+<p>Spring is a project aiming to create a new and versatile RTS Engine. Spring is not actually a game, but a powerful free cross-platform RTS engine.</p>
+<ul>
+<li>List of games using the engine: <a href="https://springrts.com/wiki/Games">https://springrts.com/wiki/Games</a></li>
+<li>More screenshots: <a href="https://springrts.com/media.php">https://springrts.com/media.php</a></li>
+<li>Homepage: <a href="https://springrts.com/">https://springrts.com/</a></li>
+<li>Source Code: <a href="https://github.com/spring/spring">https://github.com/spring/spring</a> (C++)</li>
+</ul>
+<h2 id="openttd"><a href="https://en.wikipedia.org/wiki/OpenTTD">OpenTTD</a></h2>
+<h2 id="-4"><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/openttd.png"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/openttd-500x378.png" alt="" title="openttd" /></a></h2>
+<p>OpenTTD is an open source simulation game based upon the popular Microprose game &quot;Transport Tycoon Deluxe&quot;, written by Chris Sawyer. It attempts to mimic the original game as closely as possible while extending it with new features.</p>
+<ul>
+<li>More screenshots: <a href="https://www.openttd.org/en/screenshots">https://www.openttd.org/en/screenshots</a></li>
+<li>Homepage: <a href="https://www.openttd.org/en/">https://www.openttd.org/en/</a></li>
+<li>Source Code: <a href="https://vcs.openttd.org/svn/browser">https://vcs.openttd.org/svn/browser</a> (C++)</li>
+</ul>
+<h2 id="warzone-2100"><a href="https://en.wikipedia.org/wiki/Warzone_2100">Warzone 2100</a> </h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/warzone2100.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/warzone2100-500x400.jpg" alt="" title="warzone2100" /></a></p>
+<p>In <strong>Warzone 2100</strong>, you command the forces of <em>The Project</em> in a battle to rebuild the world after mankind has almost been destroyed by nuclear missiles. The game offers campaign, multi-player, and single-player skirmish modes. An extensive tech tree with <a href="https://guide.wz2100.net/r/tech-tree">over 400 different technologies</a>, combined with the unit design system, allows for a wide variety of possible units and tactics.</p>
+<ul>
+<li>More screenshots: <a href="https://wz2100.net/old-site/screenshots">https://wz2100.net/old-site/screenshots</a></li>
+<li>Homepage: <a href="https://wz2100.net/">https://wz2100.net/</a></li>
+<li>Source Code: <a href="https://developer.wz2100.net/browser">https://developer.wz2100.net/browser</a> (C++)</li>
+</ul>
+<h2 id="0-a-d"><strong><a href="https://en.wikipedia.org/wiki/0ad">0 A.D.</a></strong></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/0ad.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/0ad-500x375.jpg" alt="" title="0ad" /></a></p>
+<p>0 A.D. (pronounced <em>&quot;zero ey-dee&quot;</em>) is a free, open-source, cross-platform real-time strategy (RTS) game of ancient warfare. In short, it is a historically-based war/economy game that allows players to relive or rewrite the history of Western civilizations, focusing on the years between 500 B.C. and 500 A.D. The project is highly ambitious, involving state-of-the-art 3D graphics, detailed artwork, sound, and a flexible and powerful custom-built game engine. This is an Age of Empires clone.</p>
+<ul>
+<li>More screenshots: <a href="https://wildfiregames.com/0ad/album_cat.php?cat_id=49">https://wildfiregames.com/0ad/album_cat.php?cat_id=49</a></li>
+<li>Homepage: <a href="https://wildfiregames.com/0ad/">https://wildfiregames.com/0ad/</a></li>
+<li>Source Code: <a href="https://svn.wildfiregames.com/">https://svn.wildfiregames.com/</a> (C++)</li>
+</ul>
+<h2 id="freeciv"><a href="https://en.wikipedia.org/wiki/FreeCiv">FreeCiv</a></h2>
+<h2 id="-5"><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/freeciv.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/freeciv-500x375.jpg" alt="" title="freeciv" /></a></h2>
+<p>Freeciv is a <a href="https://freeciv.wikia.com/wiki/License" title="License">Free and Open Source</a> empire-building strategy game inspired by the history of human civilization. The game commences in prehistory and your mission is to lead your tribe from the stone age to the space age.</p>
+<ul>
+<li>More screenshots: <a href="https://freeciv.wikia.com/wiki/Screenshots">https://freeciv.wikia.com/wiki/Screenshots</a></li>
+<li>Homepage: <a href="https://freeciv.wikia.com/wiki/Main_Page">https://freeciv.wikia.com/wiki/Main_Page</a></li>
+<li>Source Code: <a href="https://svn.gna.org/viewcvs/freeciv/">https://svn.gna.org/viewcvs/freeciv/</a> (C)</li>
+</ul>
+<h2 id="lincity"><a href="https://en.wikipedia.org/wiki/LinCity">LinCity</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/lincity.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/lincity-500x375.jpg" alt="" title="lincity" /></a></p>
+<p>LinCity-NG is a city simulation game. It is a polished and improved version of the classic<a href="https://www.floot.demon.co.uk/lincity.html" title="https://www.floot.demon.co.uk/lincity.html">LinCity</a> game. In the game, you are required to build and maintain a city. You can win the game either by building a sustainable economy or by evacuating all citizens with spaceships.</p>
+<ul>
+<li>More screenshots: <a href="https://lincity-ng.berlios.de/wiki/index.php/Screenshots">https://lincity-ng.berlios.de/wiki/index.php/Screenshots</a></li>
+<li>Homepage: <a href="https://lincity-ng.berlios.de/wiki/index.php/Main_Page">https://lincity-ng.berlios.de/wiki/index.php/Main_Page</a></li>
+<li>Source Code: <a href="https://svn.berlios.de/wsvn/lincity-ng">https://svn.berlios.de/wsvn/lincity-ng</a> (C++)</li>
+</ul>
+<h2 id="simutrans"><a href="https://en.wikipedia.org/wiki/Simutrans">Simutrans</a> </h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/simutrans.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/simutrans-500x347.jpg" alt="" title="simutrans" /></a></p>
+<p>Simutrans is a freeware and open-source transportation simulation game.Your goal is to establish a successful transport company. Transport passengers, mail and goods by rail, road, ship and air. Interconnect cities, districts, public buildings, industries and tourist attractions by buiding a transport network you always dreamed of. Control and watch your finances and the traffic of your vehicles and goods. Start in 1880 and finish in 2050. There will be new vehicles and buildings throughout this time.</p>
+<ul>
+<li>More screenshots: <a href="https://www.simutrans.com/paksets.htm">https://www.simutrans.com/paksets.htm</a></li>
+<li>Homepage: <a href="https://www.simutrans.com/">https://www.simutrans.com/</a></li>
+<li>Source Code: <a href="https://github.com/aburch/simutrans">https://github.com/aburch/simutrans</a> (C++)</li>
+</ul>
+<h2 id="hedgewars"><a href="https://en.wikipedia.org/wiki/Hedgewars">Hedgewars</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/hedgewars.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/hedgewars-500x375.jpg" alt="" title="hedgewars" /></a></p>
+<p>Hedgewars is a turn based strategy, artillery, action and comedy game, featuring the antics of pink hedgehogs with attitude as they battle from the depths of hell to the depths of space.</p>
+<ul>
+<li>More screenshots: <a href="https://hedgewars.org/screenshots.html">https://hedgewars.org/screenshots.html</a></li>
+<li>Homepage: <a href="https://hedgewars.org/">https://hedgewars.org/</a></li>
+<li>Source Code: <a href="https://code.google.com/p/hedgewars/">https://code.google.com/p/hedgewars/</a> (Pascal - for an alternative in C++ you can try <a href="https://www.wormux.org/">https://www.wormux.org</a>)</li>
+</ul>
+<h2 id="cube-2-sauerbraten"><strong><a href="https://en.wikipedia.org/wiki/Cube_2:_Sauerbraten">CUBE 2: Sauerbraten</a></strong></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/cube2-sauerbraten.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/cube2-sauerbraten-500x372.jpg" alt="" title="cube2-sauerbraten" /></a></p>
+<p>Cube 2: Sauerbraten is a free multiplayer/singleplayer first person shooter, built as a major redesign of the<a href="https://www.cubeengine.com/">Cube</a> FPS. Much like the original Cube, the aim of this game is not necessarily to produce the most features &amp; eyecandy possible, but rather to allow map/geometry editing to be done dynamically in-game, to create fun gameplay and an elegant engine.The engine supporting the game is entirely original in code &amp; design, and its code is Open Source (ZLIB license, read the <a href="https://sauerbraten.org/README.html">docs</a> for more on how you can use the engine). While you're at it, you should check <a href="https://assault.cubers.net/">AssaultCube</a> too.</p>
+<ul>
+<li>More screenshots: <a href="https://sauerbraten.sourceforge.net/screenshots.html">https://sauerbraten.sourceforge.net/screenshots.html</a></li>
+<li>Homepage: <a href="https://sauerbraten.org/">https://sauerbraten.org/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/sauerbraten/">https://sourceforge.net/projects/sauerbraten/</a> (C++)</li>
+</ul>
+<h2 id="battle-for-wesnoth"><a href="https://en.wikipedia.org/wiki/Battle_for_Wesnoth">Battle for Wesnoth</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/wesnoth.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/wesnoth-500x375.jpg" alt="" title="wesnoth" /></a></p>
+<p>The Battle for Wesnoth is a Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat. Fight a desperate battle to reclaim the throne of Wesnoth, or take hand in any number of other adventures.</p>
+<ul>
+<li>More screenshots: <a href="https://wiki.wesnoth.org/Screenshots">https://wiki.wesnoth.org/Screenshots</a></li>
+<li>Homepage: <a href="https://www.wesnoth.org/">https://www.wesnoth.org/</a></li>
+<li>Source Code: <a href="https://svn.gna.org/viewcvs/wesnoth/">https://svn.gna.org/viewcvs/wesnoth/</a> (C++)</li>
+</ul>
+<h2 id="glest"><strong><a href="https://en.wikipedia.org/wiki/Glest">Glest</a></strong></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/glest.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/glest-500x375.jpg" alt="" title="glest" /></a></p>
+<p><strong>Glest</strong> is a free 3D real-time strategy game, where you control the armies of two different factions: Tech, which is mainly composed of warriors and mechanical devices, and Magic, that prefers mages and summoned creatures in the battlefield. Glest is not just a game, but also an engine to make strategy games, based on XML and a set of tools. A few mods already exist.</p>
+<ul>
+<li>More screenshots: <a href="https://glest.org/en/gallery-screenshots.php">https://glest.org/en/gallery-screenshots.php</a></li>
+<li>Homepage: <a href="https://glest.org/en/index.php">https://glest.org/en/index.php</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/glest/">https://sourceforge.net/projects/glest/</a> (C++)</li>
+</ul>
+<h2 id="ufo-alien-invasion"><strong><a href="https://en.wikipedia.org/wiki/UFO:_Alien_Invasion">UFO: Alien Invasion</a></strong></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/ufo-alien-invasion.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/ufo-alien-invasion-500x375.jpg" alt="" title="ufo-alien-invasion" /></a></p>
+<p>It is the year 2084. You control a secret organisation charged with defending Earth from a brutal alien enemy. Build up your bases, prepare your team, and dive head-first into the fast and flowing turn-based combat. <strong>UFO: Alien Invasion</strong> is a squad-based tactical strategy game in the tradition of the old <em>X-COM</em> PC games, but with a twist. Our game combines military realism with hard science-fiction and the weirdness of an alien invasion. The carefully constructed turn-based system gives you pin-point control of your squad while maintaining a sense of pace and danger.</p>
+<ul>
+<li>More screenshots: <a href="https://ufoai.ninex.info/wiki/index.php/Media">https://ufoai.ninex.info/wiki/index.php/Media</a></li>
+<li>Homepage: <a href="https://ufoai.ninex.info/wiki/index.php/News">https://ufoai.ninex.info/wiki/index.php/News</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/ufoai/">https://sourceforge.net/projects/ufoai/</a> (C)</li>
+</ul>
+<h2 id="extreme-tux-racer"><a href="https://en.wikipedia.org/wiki/Extreme_Tux_Racer">Extreme Tux Racer</a></h2>
+<p><a href="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/extreme-tuxracer.jpg"><img src="https://shinnok.com/rants/2011/07/cool-open-source-games-you-should-contribute-to/images/extreme-tuxracer-500x375.jpg" alt="" title="extreme-tuxracer" /></a></p>
+<p>Extreme Tux Racer is an open-source downhill racing game starring Tux, the Linux mascot. It follows in the path of Tux Racer and its derivatives.</p>
+<ul>
+<li>More screenshots: <a href="https://extremetuxracer.com/?screenshots">https://extremetuxracer.com/?screenshots</a></li>
+<li>Homepage: <a href="https://extremetuxracer.com/">https://extremetuxracer.com/</a></li>
+<li>Source Code: <a href="https://sourceforge.net/projects/extremetuxracer/">https://sourceforge.net/projects/extremetuxracer/</a> (C++)</li>
+</ul>
+<p>This list is not set in stone and I'll try and update it with some personal comments for each game that I've played and possibly more media and links, as well as add games that should definitely make this list but I somehow missed them, thus, if you have any notable mentions that you feel I shouldn't have left out please feel free to let me know with a comment.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

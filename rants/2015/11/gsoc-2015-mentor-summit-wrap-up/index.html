@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2015&#x2F;11&#x2F;gsoc-2015-mentor-summit-wrap-up&#x2F;">GSoC 2015 Mentor Summit wrap-up</a>
+</h2>
+<p class="subtitle"><strong>2015-11-26</strong></p>
+</div>
+<div class="item">
+<p><a href="https://shinnok.com/rants/2015/11/gsoc-2015-mentor-summit-wrap-up/images/IMG_1026.jpg"><img src="https://shinnok.com/rants/2015/11/gsoc-2015-mentor-summit-wrap-up/images/IMG_1026-375x500.jpg" alt="The security guard attending the door (before)" /></a> The security guard attending the door (before)</p>
+<p>I participated at the GSoC mentor summit as part of Openwall's team during this year's iteration. The summit took place 6-8 Nov in California, Mountain View at Google and it offers a chance for all GSoC participant orgs to meet up, exchange ideas and contacts, swag, drinks and chocolate and even PGP keys. It is also a good opportunity to talk with the Google peeps assigned with GSoC and suggest new ideas, resolve issues or congratulate their efforts.</p>
+<p>Here are a dozen or so ideas that I walked off with from the summit, no particular order:</p>
+<ol>
+<li>GSoC is a lot of work, especially from just a handful of people involved with logistics/admin and likely another handful with development of the Melange suite. Be conscious of your non-critical communications and requests of Carol and company, less is better.</li>
+<li>Melange, the software behind GSoC platform is Open Source. How about applying the bad blood in regards to it on the source directly? If you're a student, I think you can apply to Melange org. https://code.google.com/p/soc/</li>
+<li>The program is here to stay. If anything, it will get bigger and with more money involved. Congrats to Google and shame on all the other big leechers who don't seed anything back. This has side effects, more people know about it now and spam applications are an issue. Some orgs had dozens if hundreds of spam applications from India this year and most were targeted at the initial 500$ stipend. The only mitigation to this is increased attention to details from mentors and more careful evaluation of students before the program kicks off. If in doubt don't accept. You'll waste your and Carol's time and Google's bucks and deny another potentially more successful opportunity to another org, student. Yes, many orgs don't get into GSoC.</li>
+<li>The student conflict resolution process, with the IRC meeting and all, is a pain for both Google and orgs, for many reasons such as time zones, speed at which it happens, lack of useful feedback. Automation and improvements to that process were discussed. An interesting proposal was the possibility to see if a student has already been accepted to another org right from Melange before you accept it to yours.</li>
+<li>Mid-term student turn over issues like dropping off the radar, throughput drops significantly, loss of interest somewhere half way, reveals commitment to another engagement not agreed upon beforehand, are all very valid reasons for FAILING. Also keep in mind that many (all) students lie before, during and after the program, either malign or benign in nature. If you have doubts, notice lack of interest, respect and time, give one strike, maybe two, then FAIL. GSoC is not a benefactor program doing charity.</li>
+<li>Another interesting discussion was the possibility of extending the community bonding period by moving the org application deadline to early as December and thus start with the student application, review and bonding early in the year and have a couple of months at hand for the student to introduce himself, get started on the project, show interest or reveal the opposite. I personally like this suggestion, since it could provide a much wider ground for careful evaluation and acceptance of students, despite increasing the commitment required from mentors and orgs.</li>
+<li>Keeping students involved after the program is an issue for all orgs. I think the previous point might help in weeding out students that are only interested in a summer gig, they do some work during the dead months of summer vacation, get paid and wash hands quickly after, very similar to an internship. I think GSoC aims a bit higher than this, but keeping students interested after the program's end is really hard, it's usually up to the student and his overlook for the Open Source community and the org he ends up with.</li>
+<li>At least 1 member from a total of 119 orgs participated this year, thus a couple hundred heads. Security projects weren't that many, apart from Openwall, Nmap, The Honeynet Project, that I noticed. I got a chance to meet people from Nmap that I acquainted way back in GSoC 2011 while I was student with Nmap, a nice surprise for me. The orgs roster was diverse, ranging from Wikimedia, gcc, llvm, git to R, Python and *BSDs to CERN, Bioinformatics and Genome research. Very few people had previous knowledge of Openwall, John the Ripper or Nmap, imagine the raised eyebrows when you tell about John the Ripper. Once I've learned that lesson, I started using &quot;Password security testing suite&quot; and &quot;Security for Open Systems&quot; to introduce my self and Openwall (mentioning bcrypt efforts yielded a bit). No shame here, such is the state of the industry and by inference the Open Source segment (which is full of hackers), lots of code, systems, technologies, communities and people involved, but little to no attention given to security, a mere afterthought given the scale, economy and speed of the tech and info industry in its entirety. I take it as a reminder though, the minute you step outside the security bubble you find out that the community is not that wide or evenly spread, popular or interesting to much of the IT industry and audience.  I guess that's why Openwall, Nmap are here in the first place, to at least attempt a swing at the current state of affairs and challenge the modus vivendi. Too much leeway here, I should expand this in a separate post.</li>
+<li>Google was really efficient in taking care of any needs for this 2 day summit(food, shelter, directions, transportation). This was an &quot;unconference&quot; where most of the talks were held by participating orgs and only a couple by Carol and the company. I even met some people from Nmap I acquainted with back in 2011 while I was a student contributor. The atmosphere was relaxed, casual, no rush between events, at least for the first day. On the second the majority of attendees had to rush to the Airport by evening and I think that subtracted from the experience and casual atmosphere for the first day. Maybe one extra day would have helped.</li>
+<li>It would have been really interesting and a pleasure to have some talks by Google employees, from different departments, on how they use Open Source for good or bad, what works and what doesn't. This would have provided some badly needed perspective and real world use case scenarios that expand outlook and even possibly motivate the OSS geeks working for the most part in solitude.</li>
+<li>Google &quot;owns&quot; Mountain View so badly. Wherever you look there's Google territory. You won't see police cars patrolling the city but you will see Google Security black SUVs strolling all over the city.</li>
+</ol>
+<p>This is it for now. I'll follow up with a separate post to jot down some random thoughts regarding Silicon Valley and San Francisco.</p>
+<p> </p>
+<p><a href="https://shinnok.com/rants/2015/11/gsoc-2015-mentor-summit-wrap-up/images/IMG_1085.jpg"><img src="https://shinnok.com/rants/2015/11/gsoc-2015-mentor-summit-wrap-up/images/IMG_1085-375x500.jpg" alt="Bruce, after the event" /></a> Bruce, after the event</p>
+<p><a href="https://shinnok.com/rants/2015/11/gsoc-2015-mentor-summit-wrap-up/images/IMG_1089.jpg"><img src="https://shinnok.com/rants/2015/11/gsoc-2015-mentor-summit-wrap-up/images/IMG_1089-500x375.jpg" alt="Bruce, after the event (close up)" /></a> Bruce, after the event (close up)</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

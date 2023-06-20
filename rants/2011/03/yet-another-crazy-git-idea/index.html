@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;yet-another-crazy-git-idea&#x2F;">Yet another crazy Git idea</a>
+</h2>
+<p class="subtitle"><strong>2011-03-26</strong></p>
+</div>
+<div class="item">
+<p>As you probably know, <a href="https://git-scm.com/">Git</a> has been getting a lot of attention and momentum lately and all kinds of crazy usages for Git are devised almost daily. Besides the usual source code management, writers are using it to track their books sources(think postscript), digital artists are using it to track their content creation, lots of people are using it for backup purposes and some crazy people are even thinking about creating a filesystem based upon Git's workflow and paradigms.</p>
+<p>I myself am using Git for all kinds of things, be it backup, bookmarks, documents and of course source code(basically everything that is subject to change, versioning, snapshoting and reverting), but in the last couple of months i've been using Git to track something special, the /etc/ configuration directory on *NIX systems. I am sysadmin on several boxes, including the one that's hosting this site and let me tell you, in these couple of months that i've been tracking /etc/ directories using Git, it saved my ass a couple of times and lots of productivity, thus resulting more free time to drink beer and do mostly useless stuff. :-) It saves your ass when you fuck up, it gives you hassle free opportunities to test out new configurations, you can keep an eye on automated or undesired configuration changes and of course the usual lazy snapshots/backups. This is great, because once you get comfortable with git, all of this comes naturally to you, i didn't have to read about it or anything like that, the idea just came to my mind and seemed pretty normal and right. Once you get into the git mindset, this becomes conventional thinking.</p>
+<p>No wonder that Git's man page <a href="https://www.kernel.org/pub/software/scm/git/docs/">first line</a> is &quot;git - the stupid content tracker&quot;, because indeed it is stupid, stupid in the sense that it doesn't care about the actual content you are tracking, the content is transparent and not interesting to git. This kind of stupidity is great, it is simplicity and simplicity leaves room for innovation and creativity. Cool.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

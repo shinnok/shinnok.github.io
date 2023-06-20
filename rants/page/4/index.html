@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div class="item">
+    <h2 class="title">
+        <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;">Shinnok&#x27;s rants</a>
+    </h2>
+</div>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;the-gravy-sucking-pig-dog-in-bsd&#x2F;">
+        The &quot;gravy sucking pig dog&quot; in BSD
+      </a>
+    </h3>
+    <small>
+      April 14, 2011
+      &middot;
+      2 min read
+    </small>
+    <div class="summary">
+      
+        
+          There&#x27;s been a while since BSD systems have this easter egg in the shutdown command source, &amp;quot;Die you gravy sucking pig d…
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;the-gravy-sucking-pig-dog-in-bsd&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;hackers-wizards-of-the-electronic-age&#x2F;">
+        Hackers: Wizards of the Electronic Age
+      </a>
+    </h3>
+    <small>
+      April 09, 2011
+      &middot;
+      1 min read
+    </small>
+    <div class="summary">
+      
+        
+          Hackers: Wizards of the Electronic Age is a short historic documentary about the early days of hardware and software hacking …
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;hackers-wizards-of-the-electronic-age&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;juicy-geeky-insight-into-the-tron-legacy-movie&#x2F;">
+        Juicy geeky insight into the Tron Legacy movie
+      </a>
+    </h3>
+    <small>
+      April 07, 2011
+      &middot;
+      1 min read
+    </small>
+    <div class="summary">
+      
+        
+          
+I just stumbled across a cool post by Josh Nimoy a special effects artist who did work on software art for the the movie Tro…
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;juicy-geeky-insight-into-the-tron-legacy-movie&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;yet-another-crazy-git-idea&#x2F;">
+        Yet another crazy Git idea
+      </a>
+    </h3>
+    <small>
+      March 26, 2011
+      &middot;
+      2 min read
+    </small>
+    <div class="summary">
+      
+        
+          As you probably know, Git has been getting a lot of attention and momentum lately and all kinds of crazy usages for Git are d…
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;yet-another-crazy-git-idea&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;say-hello-to-my-little-friend-netcatgui&#x2F;">
+        Say hello to my little friend, NetcatGUI
+      </a>
+    </h3>
+    <small>
+      March 25, 2011
+      &middot;
+      3 min read
+    </small>
+    <div class="summary">
+      
+        
+          I just released this nifty little tool, NetcatGUI, a graphical user interface equivalent to the popular netcat. It is a simpl…
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;say-hello-to-my-little-friend-netcatgui&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;nextstep-release-3-demo-by-steve-jobs&#x2F;">
+        NeXTSTEP Release 3 demo by Steve Jobs
+      </a>
+    </h3>
+    <small>
+      March 12, 2011
+      &middot;
+      1 min read
+    </small>
+    <div class="summary">
+      
+        
+          I just stumbled on this NeXTSTEP 3 demo presented by Steve Jobs himself and i must admit, i was purely shocked about what NeX…
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;03&#x2F;nextstep-release-3-demo-by-steve-jobs&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+    <article class="item">
+        
+  <div class="post-preview">
+    <h3 class="post-title">
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;01&#x2F;code-rush-lived-fast-died-young-left-a-tired-corpse&#x2F;">
+        Code Rush - lived fast, died young, left a tired corpse
+      </a>
+    </h3>
+    <small>
+      January 31, 2011
+      &middot;
+      1 min read
+    </small>
+    <div class="summary">
+      
+        
+          I just stumbled on this amazing documentary, which carves out the living atmosphere at Netscape during the 1998-1999 years, t…
+      <a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;01&#x2F;code-rush-lived-fast-died-young-left-a-tired-corpse&#x2F;">read more</a>
+    </div>
+  </div>
+
+    </article>
+
+<div class="item">
+    <nav class="pagination">
+        
+            <a class="previous" href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;page&#x2F;3&#x2F;">‹ Previous</a>
+        
+        
+            <a class="next" href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;page&#x2F;5&#x2F;">Next ›</a>
+        
+    </nav>
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2015&#x2F;11&#x2F;tarsnap-gui-v0-7&#x2F;">Tarsnap GUI v0.7</a>
+</h2>
+<p class="subtitle"><strong>2015-11-02</strong></p>
+</div>
+<div class="item">
+<p><a href="https://shinnok.com/rants/2015/11/tarsnap-gui-v0-7/images/Tarsnap-v07-OSX-4.png"><img src="https://shinnok.com/rants/2015/11/tarsnap-gui-v0-7/images/Tarsnap-v07-OSX-4-472x500.png" alt="Tarsnap v07 OSX" /></a></p>
+<p>I've just tagged version 0.7 at Github:</p>
+<p><a href="https://github.com/Tarsnap/tarsnap-gui/releases/tag/v0.7">https://github.com/Tarsnap/tarsnap-gui/releases/tag/v0.7</a></p>
+<p>This release improves on the earlier v0.6 release, adds a bunch of new features like desktop notifications, skip files and the ability grab the Tarsnap credit from the website, along with a slew of general improvements, fixes and UI refinements. Better looking, leaner and more robust.</p>
+<p>Desktop notifications are especially useful for the scheduled job backups, so that you are notified when the backups have started, completed or failed. OS X displays the notifications like this in the Notifications Centre:</p>
+<p><a href="https://shinnok.com/rants/2015/11/tarsnap-gui-v0-7/images/tarsnap-osx-notifications.png"><img src="https://shinnok.com/rants/2015/11/tarsnap-gui-v0-7/images/tarsnap-osx-notifications.png" alt="Tarsnap OSX notifications" /></a></p>
+<p>These are arguably valuable for quickly reviewing scheduled backups that have completed while you were away.</p>
+<p>I've also carefully refined the UI for high res/dpi displays so that it looks gorgeous. This is how casually browsing your archives in Tarsnap looks like on a 40&quot; 4k display:</p>
+<p><a href="https://shinnok.com/rants/2015/11/tarsnap-gui-v0-7/images/tarsnap-big.png"><img src="https://shinnok.com/rants/2015/11/tarsnap-gui-v0-7/images/tarsnap-big-268x500.png" alt="Tarsnap OSX 4k" /></a></p>
+<p>More cool things have been packed packed into this release, so I urge you to read the announcement e-mail for all the insight:</p>
+<p><a href="https://mail.tarsnap.com/tarsnap-users/msg01175.html">https://mail.tarsnap.com/tarsnap-users/msg01175.html</a></p>
+<p>Take Tarsnap GUI v0.7 for a ride and let me know what you make of it:</p>
+<p><a href="https://github.com/Tarsnap/tarsnap-gui">https://github.com/Tarsnap/tarsnap-gui</a></p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

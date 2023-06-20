@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2010&#x2F;12&#x2F;openbsd-ipsec-supposedly-backdoored-by-the-fbi&#x2F;">OpenBSD IPSEC supposedly backdoored by the FBI</a>
+</h2>
+<p class="subtitle"><strong>2010-12-15</strong></p>
+</div>
+<div class="item">
+<p>According to an e-mail from Theo de Raadt(founder and current leader of the OpenBSD project) to the openbsd-tech mailing list, the IPSEC stack could have been backdoored by some open source developers(on the FBI payroll) taking part in the project in its early days. The supposition comes out of an e-mail he received from an old friend or so. Here goes the original e-mail:</p>
+<blockquote>
+<p><strong>List: openbsd-tech</strong></p>
+<p><strong>Subject: Allegations regarding OpenBSD IPSEC</strong></p>
+<p><strong>From: Theo de Raadt &lt;deraadt () cvs ! openbsd ! org&gt;</strong></p>
+<p><strong>Date: 2010-12-14 22:24:39</strong></p>
+<p><strong>Message-ID: 201012142224.oBEMOdWM031222 () cvs ! openbsd ! org</strong></p>
+<p>I have received a mail regarding the early development of the OpenBSD
+IPSEC stack.  It is alleged that some ex-developers (and the company
+they worked for) accepted US government money to put backdoors into
+our network stack, in particular the IPSEC stack.  Around 2000-2001.</p>
+<p>Since we had the first IPSEC stack available for free, large parts of
+the code are now found in many other projects/products.  Over 10
+years, the IPSEC code has gone through many changes and fixes, so it
+is unclear what the true impact of these allegations are.</p>
+<p>The mail came in privately from a person I have not talked to for
+nearly 10 years.  I refuse to become part of such a conspiracy, and
+will not be talking to Gregory Perry about this.  Therefore I am
+making it public so that
+(a) those who use the code can audit it for these problems,
+(b) those that are angry at the story can take other actions,
+(c) if it is not true, those who are being accused can defend
+themselves.</p>
+<p>Of course I don't like it when my private mail is forwarded.  However
+the &quot;little ethic&quot; of a private mail being forwarded is much smaller
+than the &quot;big ethic&quot; of government paying companies to pay open source
+developers (a member of a community-of-friends) to insert
+privacy-invading holes in software.</p>
+<hr />
+<p>From: Gregory Perry <a href="mailto:Gregory.Perry@GoVirtual.tv">Gregory.Perry@GoVirtual.tv</a>
+To: &quot;deraadt@openbsd.org&quot; <a href="mailto:deraadt@openbsd.org">deraadt@openbsd.org</a>
+Subject: OpenBSD Crypto Framework
+Thread-Topic: OpenBSD Crypto Framework
+Thread-Index: AcuZjuF6cT4gcSmqQv+Fo3/+2m80eg==
+Date: Sat, 11 Dec 2010 23:55:25 +0000
+Message-ID: &lt;8D3222F9EB68474DA381831A120B1023019AC034@mbx021-e2-nj-5.
+exch021.domain.local&gt;
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+Content-Type: text/plain; charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Status: RO</p>
+<p>Hello Theo,</p>
+<p>Long time no talk.  If you will recall, a while back I was the CTO at
+NETSEC and arranged funding and donations for the OpenBSD Crypto
+Framework.  At that same time I also did some consulting for the FBI,
+for their GSA Technical Support Center, which was a cryptologic
+reverse engineering project aimed at backdooring and implementing key
+escrow mechanisms for smart card and other hardware-based computing
+technologies.</p>
+<p>My NDA with the FBI has recently expired, and I wanted to make you
+aware of the fact that the FBI implemented a number of backdoors and
+side channel key leaking mechanisms into the OCF, for the express
+purpose of monitoring the site to site VPN encryption system
+implemented by EOUSA, the parent organization to the FBI.  Jason
+Wright and several other developers were responsible for those
+backdoors, and you would be well advised to review any and all code
+commits by Wright as well as the other developers he worked with
+originating from NETSEC.</p>
+<p>This is also probably the reason why you lost your DARPA funding, they
+more than likely caught wind of the fact that those backdoors were
+present and didn't want to create any derivative products based upon
+the same.</p>
+<p>This is also why several inside FBI folks have been recently
+advocating the use of OpenBSD for VPN and firewalling implementations
+in virtualized environments, for example Scott Lowe is a well
+respected author in virtualization circles who also happens top be on
+the FBI payroll, and who has also recently published several tutorials
+for the use of OpenBSD VMs in enterprise VMware vSphere deployments.</p>
+<p>Merry Christmas...</p>
+<p>Gregory Perry
+Chief Executive Officer
+GoVirtual Education</p>
+<p>&quot;VMware Training Products &amp; Services&quot;</p>
+<p>540-645-6955 x111 (local)
+866-354-7369 x111 (toll free)
+540-931-9099 (mobile)
+877-648-0555 (fax)</p>
+<p>https://www.facebook.com/GregoryVPerry
+https://www.facebook.com/GoVirtual</p>
+<p>(<a href="https://marc.info/?l=openbsd-tech&amp;m=129236621626462&amp;w=2">archived e-mail at marc.info</a>)</p>
+<p> </p>
+</blockquote>
+<p>If this turns out to be true then...that's really insane.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2010&#x2F;11&#x2F;secret-on-chip-debugger-discovered-in-amd-cpus&#x2F;">Secret on-chip debugger discovered in AMD CPUs</a>
+</h2>
+<p class="subtitle"><strong>2010-11-16</strong></p>
+</div>
+<div class="item">
+<p>LE: Apparently the <strong>story is a bluff</strong> since this <em>SUPER SECRET WTF OMGGMG SHIT</em> discovery has been publicly known and used for <a href="https://tracker.coreboot.org/trac/coreboot/browser/trunk/LinuxBIOSv2/src/cpu/amd/model_fxx/model_fxx_init.c?rev=1657">at least 6 years now</a>(look for 0x9c5a203a at the beginning). So, El Reg, you suck for not verifying stories before publishing them. AMD Rocks!</p>
+<p>---</p>
+<p>According to The Register a <em>super secret</em> password protected on-chip debugger has been discovered in all AMD chips since Athlon XP. The debugger seems to be activated once a specific password value(0x9C5A203A) has been set in a certain register(EDI to be more exact, a <strong>heavily</strong> used register).</p>
+<p>I can't help but wonder where exactly software security will stand on AMD CPUs, once you can access and control chip functionality by just setting a certain value in a register(free ring0 access huh?, local root?..nice, what about system?..even nicer). What about that value making it into that register by chance? Slow CPU operation? Deal with it. :-)</p>
+<p>Though i am afraid my assumptions are just heuristic since one needs more details and insight into this issue before making this into a statement. Quote from Czernobyl(the discoverer):</p>
+<blockquote>
+<p>Amidst a ton of comments, I've seen some somber interrogations about security. IMO what is described herein does not pose new security problems per se; after all MSRs and Control Registers aren't accessible except from ring zero. Nor are the Host's CRs and MSRs accessible from a properly designed Virtual machine. I doubt the newly disclosed features will open security risks that were not already present due to poor OS and/or virtualization systems designs... (end of note).</p>
+</blockquote>
+<p>Excerpt from <a href="https://www.theregister.co.uk/2010/11/15/amd_secret_debugger/">The Register article</a>:</p>
+<blockquote>
+<p>A hardware hacker has discovered a secret debugging feature hidden in all AMD chips made in the past decade.</p>
+<p>The password-protected debugger came as a shock to reverse-engineers who have hungered for an on-chip mechanism for performing conditional and direct-hardware breakpoint operations. Although AMD has built the firmware-controlled feature into all chips since the Athlon XP, the company kept it a closely guarded secret that was only <a href="https://www.woodmann.com/collaborative/knowledge/index.php/Super-secret_debug_capabilities_of_AMD_processors_%21">disclosed late last week</a> by a hacker who goes by the name Czernobyl.</p>
+<p><a href="https://www.theregister.co.uk/2010/11/15/amd_secret_debugger/">...</a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

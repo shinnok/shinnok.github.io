@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div id="tarsnap" class="item">
+    <h2><a href="#tarsnap">Tarsnap GUI</a></h2><br />
+    <p>A GUI frontend for the popular Tarsnap online backup service.</p>
+    <p>Tarsnap GUI is open source (BSD licensed), cross-platform and written in C++ with the help of the Qt SDK framework. While the original Tarsnap command line client is oriented towards server and scripted backups, facilitating workflows from inside a terminal, the GUI frontend application allows the desktop user to easily back up important files and directories using a lean and no-fuss interface while benefiting from the same power, flexibility, openness and cost effectiveness that the Tarsnap service implies and provides.</p>
+    <div class="projects-news">
+        <h1>Tarsnap News</h1>
+        <ul>
+            <li>[2017-07-29] Tarsnap GUI v1.0 stable released. See <a href="http://mail.tarsnap.com/tarsnap-users/msg01406.html">list announcement</a> and <a href="/rants/2017/08/tarsnap-gui-v1-0-stable-the-chosen-one/">blog post</a></li>
+            <li>[2015-06-11] Tarsnap GUI v0.5 released. See <a href="http://mail.tarsnap.com/tarsnap-users/msg01123.html">list announcement</a> and <a href="/rants/2015/06/tarsnap-frontend-released/">blog post</a></li>
+        </ul>
+    </div>
+    <div class="screenshots">
+    <p><h3>Sreenshots:</h3></p>
+    <a href="https://github.com/Tarsnap/tarsnap-gui/wiki#screenshots">https://github.com/Tarsnap/tarsnap-gui/wiki#screenshots</a>
+    </div>
+    <div class="links">
+        <p><h3>Links:</h3></p>
+        </p>
+            Project page on GitHub: <a href="https://github.com/Tarsnap/tarsnap-gui/">https://github.com/Tarsnap/tarsnap-gui/</a><br />
+            Wiki pages: <a href="https://github.com/Tarsnap/tarsnap-gui/wiki">Github Wiki pages</a><br />
+        </p>
+    </div>
+</div>
+<div id="johnny" class="item">
+    <h2><a href="#johnny">Johnny</a></h2><br />
+    <p>A GUI frontend for the popular John the Ripper password cracker.</p>
+    <p>Johnny is open source, cross-platform and written in C++ using the Qt SDK framework. The application is defined as an efficient, intuitive and the same time a powerful interface that is both easy to use and feature rich enough to access both core John the Ripper functionality as well as the more advanced Jumbo version, an approach that will enable inexperienced users to be comfortable with using JtR as well as please the more experienced ones to achieve maximum usage efficiency and the best cracking experience. :-)</p>
+    <div class="projects-news">
+        <h1>Johnny News</h1>
+        <ul>
+            <li>[2015-07-08] Johnny v2.0 released. See <a href="http://www.openwall.com/lists/john-users/2015/07/08/3">list announcement</a> and <a href="/rants/2015/10/johnny-2-0-reloaded/">blog post</a></li>
+            <li><a href="http://openwall.info/wiki/john/johnny">[2012-08-21] Johnny v1.1 released</a></li>
+        </ul>
+    </div>
+    <div class="screenshots">
+    <p><h3>Sreenshots:</h3></p>
+    <a href="http://openwall.info/wiki/john/johnny">http://openwall.info/wiki/john/johnny</a>
+    </div>
+    <div class="links">
+        <p><h3>Links:</h3></p>
+        </p>
+            More info: <a href="http://openwall.info/wiki/john/johnny">Openwall Wiki page</a><br />
+            The source is on GitHub: <a href="https://github.com/shinnok/johnny">https://github.com/shinnok/johnny</a><br />
+        </p>
+    </div>
+</div>
+<div id="ncgui" class="item">
+    <h2><a href="#ncgui">NetcatGUI</a></h2><br />
+    <p>NetcatGUI is a simple gui program that is set to emulate the popular network "swiss army knife" tool called netcat(nc) using an easy to use graphical user interface and cross platform mentality.</p>
+    <p>There are easy keyboard shortcuts for almost every operation of NetcatGUI in order to achieve maximum efficiency. If you get used to them(they're pretty obvious)you will feel as close as you can to a console despite of using a gui.</p>
+    <p>NetcatGUI is written in Qt, thus it supports Linux, Mac OS X, BSD and Windows out of the box. The source code is released under GNU GPL v2.</p>
+    <div class="projects-news">
+        <h1>NetcatGUI News</h1>
+        <ul>
+            <li><a href="/projects/#ncgui">[2011-03-25] NetcatGUI v1.0 released</a></li>
+        </ul>
+    </div>
+    <div class="screenshots">
+    <p><h3>Sreenshots:</h3></p>
+    <ul class="projects-gallery">
+        <li><a href="/projects/netcatgui/screenshots/NetcatGUI-gnome1.png"><img src="/projects/netcatgui/screenshots/NetcatGUI-gnome1.png"></img>Gnome</a></li>
+        <li><a href="/projects/netcatgui/screenshots/NetcatGUI-gnome2.png"><img src="/projects/netcatgui/screenshots/NetcatGUI-gnome2.png"></img>Gnome</a></li>
+        <li><a href="/projects/netcatgui/screenshots/NetcatGUI-kde1.png"><img src="/projects/netcatgui/screenshots/NetcatGUI-kde1.png"></img>KDE4</a></li>
+        <li><a href="/projects/netcatgui/screenshots/NetcatGUI-kde2.png"><img src="/projects/netcatgui/screenshots/NetcatGUI-kde2.png"></img>KDE4</a></li>
+        <li><a href="/projects/netcatgui/screenshots/NetcatGUI-win7-1.png"><img src="/projects/netcatgui/screenshots/NetcatGUI-win7-1.png"></img>Windows 7</a></li>
+        <li><a href="/projects/netcatgui/screenshots/NetcatGUI-win7-2.png"><img src="/projects/netcatgui/screenshots/NetcatGUI-win7-2.png"></img>Windows 7</a></li>
+    </ul>
+    </div>
+    <div class="links">
+        <p><h3>Links:</h3></p>
+        </p>
+            More info: <a href="https://github.com/shinnok/netcatgui/blob/master/README">README</a><br />
+            The source is on GitHub: <a href="https://github.com/shinnok/netcatgui">https://github.com/shinnok/netcatgui</a><br />
+            MS Windows standalone portable binary (static build): <a href="https://github.com/downloads/shinnok/netcatgui/NetcatGUI-v1.0-win-portable.zip">NetcatGUI-v1.0-win-portable.zip</a><br />
+            Linux shared binary (build with shared Qt4 libraries, make sure you have them installed on your system): <a href="https://github.com/downloads/shinnok/netcatgui/NetcatGUI_1.0_linux_shared.tar.gz">NetcatGUI_1.0_linux_shared.tar.gz</a><br />
+        </p>
+    </div>
+</div>
+<div id="old-projects" class="item">
+    <h2><a href="#old-projects">Old projects</a></h2><br />
+    <p>Mandatory comment: Mind you, that the projects and the <i>codez</i> found bellow are pretty old now. They're from around the first year of college or so :-D, I was pretty young(in programming too) back then and are not maintained any more. I did not achieve all the preset goals for those projects(like security for eg.). I list them just in case someone might find them useful or wishing to improve them.</p>
+    <div id="mftp" class="item">
+        <h2><a href="#mftp">M-ftp</a></h2><br />
+        <p>The M-ftp project consists of a concurent TCP based Open Source FTP server for Unix like systems.The implementation meets the standard requirements for File Transfer Protocol defined in RFC 959 plus some of the extensions required to cover a wide area of FTP clients.M-ftp is intended to be a very light,easy to set-up,easy to use and reliable FTP server. More info on my old website, <a href="https://thecode.shinnok.com/index2-4.html">#thecode</a>.</p>
+    </div>
+    <div id="mchat" class="item">
+        <h2><a href="#mchat">M-chat</a></h2><br />
+        <p>The M-chat project is an Open Source client-server application for chatting in a Linux system. More info on my old website, <a href="https://thecode.shinnok.com/index2-0.html">#thecode</a>.</p>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

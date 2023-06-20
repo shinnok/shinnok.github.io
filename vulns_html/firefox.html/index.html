@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div class="item">
+    <h1>[2008-07-23] Firefox 2,3 url handling memory consumption DOS</h1>
+</div>
+<div class="item">
+    <h1>Description</h1>
+    <p>Mozilla Firefox 2 and 3 are prone to a remote denial of service attack because it fails to properly handle overly long url's in the form of www.[100000+ x 'a'].com.An example will be &lt;a href=&quot;http://www.a.a.a.a.a....[100000+].com/&quot;&gt;test&lt;/a&gt; or just pasting that url in the address bar(yes firefox accepts such a thing).Ofcourse there are several ways an url of this form could be formed.Putting only dots instead of '.a' works just fine.When following such a link Firefox will start eating up some nice cpu and after that will start consuming large amounts memory(ram).Eventually it will run out of memory and it will crash(not always though,it will just hang at some point).If somehow the memory consumption doesn't occur after the cpu phaze and firefox seems to have recovered then just trying to browse to some other page or interact with firefox will start the memory consumption process(large amounts of ram consumption cand lead to system instabillity).Making the url 700000+ long the cpu consumption phaze could be considered itself a dos attack but since it will end after a few minutes or hours :D depending on the cpu i will be considering that firefox is conducting some legitimate processing of the url.But the memory amounts consumed are to big to be considered legitimate so there is no doubt that there is some sort of a bug(vulnerability) in the code or in the logic of that part of the code.All of this makes firefox not responding(hanging),thus leading to a denial of service attack.A malicious website can host a page including such an url,thereby causing a remote denial of service attack on systems visiting the website.
+    <br />
+    Tested on Firefox 2.0.0.14 and 3.0.1 under Windows XP,Vista,Linux(Backtrack :P).
+</p>
+</div>
+<div class="item">
+    <h1>POC/Exploit code&nbsp;&nbsp;&nbsp;<a href="../vulns_code/firefox.html">[.html]</a></h1>
+     <p>The following proof of concept html page has been provided
+     <a href="../vulns_code/firefox.html">firefox.html</a></p>
+</div>
+<div class="item">
+    <h1>Other references</h1>
+        <p>Milw0rm : <a href=""></a></p>
+        <p>Securityfocus : <a href=""></a></p>
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

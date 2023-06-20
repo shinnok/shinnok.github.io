@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2010&#x2F;11&#x2F;packet-storm-security-launches-new-website&#x2F;">Packet Storm Security launches new website</a>
+</h2>
+<p class="subtitle"><strong>2010-11-16</strong></p>
+</div>
+<div class="item">
+<p>Yesterday, <a href="https://packetstormsecurity.org/">Packet Storm</a> re-launched with a completely new website, both in looks and functionality, adding lots of web2.0 features like favorites, commenting, trending, tagging and rss everywhere, etc..</p>
+<p>In my opinion the new framework is very promising, but hey, why not decide for yourself. Here is the e-mail announcing the launch:</p>
+<blockquote>
+<p>November 15, 2010 -  Today is the launch of a completely new version of Packet Storm that has been long awaited and is long overdue.  The security community has given us a lot of feedback during our design phase and we have attempted to integrate many features.</p>
+<p>As you may already know, Packet Storm is home to a massive security portal that houses news, whitepapers, advisories, exploits and tools.</p>
+<p>It's a place to showcase your work, whether it be a research advisory or a tool you wrote.  It's a place to check news headlines coming down the wire or to find out about the latest vulnerabilities.</p>
+<p>The goal of the new site is usability and integration. We realized that this community is missing a centralized portal to appropriately promote their work and interact with others in the community.</p>
+<p>The site currently hosts:</p>
+<p>More than 38,000 advisories</p>
+<p>More than 20,000 exploits</p>
+<p>More than 5,000 tools</p>
+<p>More than 2,000 whitepapers</p>
+<p>Full historical view of releases - going all the way back to 1998.</p>
+<p>New core features:</p>
+<p>Trending for top author, popular topics and daily additions</p>
+<p>Tagging exists all over the place</p>
+<p>Commenting is allowed everywhere</p>
+<p>RSS feeds are all over the place</p>
+<p>Search Users, Files, News and Authors</p>
+<p>Users:</p>
+<p>Commenting, favorites and the ability to view the favorites of the people you follow.</p>
+<p>CVE and OSVDB integration</p>
+<p>Privacy settings for all personal information</p>
+<p>You can send messages to other users</p>
+<p>You can switch to a minimal listing view</p>
+<p>You can set your primary mirror; we're on four continents</p>
+<p>Share items with Facebook, Twitter, Digg, Reddit, LinkedIn, etc</p>
+<p>Authors:</p>
+<p>Your very own author page and author id.</p>
+<p>Ability to add biographic information and a picture.</p>
+<p>Authors ranked by releases per month</p>
+<p>If an already established author applies with the same email address as is stored in the archive, their profile will be linked to their work on the site.</p>
+</blockquote>
+<p><a href="https://packetstormsecurity.org/">https://packetstormsecurity.org/</a></p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

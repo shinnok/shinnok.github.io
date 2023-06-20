@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2016&#x2F;02&#x2F;using-tarsnap-gui-on-os-x&#x2F;">Using Tarsnap GUI on OS X</a>
+</h2>
+<p class="subtitle"><strong>2016-02-19</strong></p>
+</div>
+<div class="item">
+<p><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/tarsnap-logo1.png" alt="Tarsnap logo" /></p>
+<p>For the past year I've been working on Tarsnap GUI, an open source cross-platform frontend for the Tarsnap backup service. Tarsnap is an online, fully encrypted, deduplicated, online backup solution, that's been around for close to 10 years now (unlike other online backup offerings with a lifespan smaller than 5 years). Starting with day one, full source code for the client tools was available for review and to establish trust. A bug bounty program is <a href="https://www.tarsnap.com/bugbounty.html">available</a> and any kind of reporting is taken seriously, promptly responded and adequately rewarded by the creator and principal developer of Tarsnap, Colin Percival. Tarsnap uses a prepaid model, you add credit to your account and you'll only pay for what you use and nothing more, no annual or monthly subscriptions. For the moment, the price per MB (SI notation) of storage (used monthly) and MB transferred is 250 picodollars each. The backend infrastructure is powered by <a href="https://aws.amazon.com">AWS</a>.</p>
+<p>Tarsnap was originally offered as a command-line suite of tools, in true allegiance to the Unix philosophy, very similar to the <a href="https://en.wikipedia.org/wiki/Tar_(computing)">tar</a> utility, for maximum flexibility and control over your backup routines and of great relevance for the server world. Die-hard Unix users and admins see no distinction between server administration and personal workstation and thus nothing is stopping you from backing up your personal machines and workstations the same way you would a networked server. Tarsnap GUI comes to the rescue here in filling whatever gap might be between the server and desktop workflows and for the people that like to keep real work inside the Terminal and all else contained in easy to use, slim, yet robust GUIs. What follows is a small tutorial on how to get started with Tarsnap GUI to back up your OS X desktop. Setting the platform differences in the Installation and Scheduling sections aside, this tutorial is very relevant to the other <a href="https://github.com/Tarsnap/tarsnap-gui/wiki/Tarsnap">supported platforms</a> too.</p>
+<h2 id="register-with-tarsnap">Register with Tarsnap</h2>
+<p>First and foremost you need to register on the <a href="https://www.tarsnap.com/account.html">Tarsnap website</a> and add some credit via the preferred method of payment (Credit card, Paypal and Bitcoin are accepted methods). Five bucks would suffice for a start. Read a bit on the homepage and <a href="https://www.tarsnap.com/gettingstarted.html">getting started page</a> just to get acquainted with Tarsnap. Tarsnap doesn't ask, thus doesn't need to store any personal information besides your e-mail address.</p>
+<h2 id="installation">Installation</h2>
+<p>At the moment of writing this tutorial, Tarsnap GUI version 0.8 and Tarsnap CLI version 1.0.36.1 are the latest offerings and installing from source is the preferred method of installation for all platforms, although we are working towards changing that at some point.</p>
+<p>Installing from source on OS X is pretty easy thanks to <a href="https://brew.sh">Homebrew</a>, an alternative to Mac ports. Once you installed Homebrew or updated to the latest version (tarsnap-gui was recently added to the homebrew-gui repo), installing Tarsnap is as simple as executing the following command in Terminal:</p>
+<p>brew tap homebrew/gui &amp;&amp; brew install tarsnap-gui &amp;&amp; brew linkapps tarsnap-gui</p>
+<p>What this will do is fetch the latest stable versions of the Tarsnap command-line utilities and the GUI front-end along with their dependencies from Github, compile from source and then add useful symlinks to the appropriate system directories. The Tarsnap command-line utilities are symlinked in /usr/local/bin and a symlink for <em>Tarsnap.app</em> should be in /Applications.</p>
+<p>If Homebrew is not a desirable option for you or you're reading this with *Linux or *BSD in mind, the steps for installing manually from source are best described in the <a href="https://github.com/Tarsnap/tarsnap-gui/blob/master/INSTALL">INSTALL</a> dist file. Some BSD flavors like FreeBSD, PCBSD have already incorporated tarsnap-gui into their repos or ports trees, or plan to like OpenBSD in next version, so it might be worth to look for it there before deciding to proceed with the manual steps. Upstream Linux RPM and DEB packages are being considered for a change.</p>
+<h2 id="wizard-setup">Wizard setup</h2>
+<p>Upon opening <em>/Applications/Tarsnap.app</em> you will be greeted with the following:</p>
+<p><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-1-500x477.png" alt="Tarsnap-tutorial-1" /></p>
+<p>This is the setup wizard and will help you get started with using Tarsnap in no time. The first step for the wizard is to find the Tarsnap command-line utilities that are used to talk with the Tarsnap servers. In the Homebrew case, they will be located in /usr/local/bin and depending on the PATH environment variable for your current user the wizard will either direct you to the <em>Advanced</em> page to set that directory manually or proceed right next to the next step for the case where you already have it in your PATH. You don't have to worry about the other settings in the <em>Advanced</em> page for now.</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-2.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-2-500x477.png" alt="Tarsnap-tutorial-2" /></a></p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-3.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-3-500x477.png" alt="Tarsnap-tutorial-3" /></a></p>
+<p> </p>
+<p>On the next screen you will be asked if you used Tarsnap on this machine already, assuming this is a fresh setup you should click on <em>No</em>. If you already used Tarsnap in the past and have a key for that machine (it is good practice to use a different key for every machine), I'm guessing you already know what you're doing and thus you can proceed the other way around. Upon clicking on <em>No</em> you end up to this screen:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-4.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-4-500x477.png" alt="Tarsnap-tutorial-4" /></a></p>
+<p> </p>
+<p>This is where you fill in your Tarsnap account credentials from the Registration step. When you click on <em>Register machine</em>, your encryption key is created locally and an accounting record using the <em>Machine name</em> specified is created on the Tarsnap server and associated with a signature of the key. This is used for generating your service and credit usage reports per machine (or key signature, the machine name doesn't matter much and can be anything you want), for your convenience, on Tarsnap.com. The actual key used for encrypting your data never leaves your machine. Your backups are safe as long as you will be able to hold on to this key privately. If you lose this key your backup data is gone forever. The actual path where the key is stored on your system, along with some useful advice, will be revealed to you in the last screen upon successful registration.</p>
+<p>That's all it takes to quickly set up Tarsnap on your desktop, rather simple right? Let's proceed by taking a first look at the main app window.</p>
+<h2 id="first-impressions">First impressions</h2>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-5.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-5-500x488.png" alt="Tarsnap-tutorial-5" /></a></p>
+<p>The first thing you'll see is the empty <em>Backup</em> pane. The Backup tab is used to quickly put to rest arbitrary files and directories of your choosing to Tarsnap. Think of it like a convenient one-time drop bin, where you can easily drag and drop important files, set a name for the archive, hit Backup button and forget about it.</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-6.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-6-500x496.png" alt="Tarsnap-tutorial-6" /></a></p>
+<p>Clicking the <em>Backup</em> button will result in an archive named <em>Tarsnap-tutorial</em> consisting of the files and directories added to the list. In a matter of seconds I have an off-site, encrypted backup of the resources in this tutorial, awesome right? Now let's look for the archive just created, leading the way to the next pane, <em>Archives</em>:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-7.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-7-500x500.png" alt="Tarsnap-tutorial-7" /></a></p>
+<p>This pane lists all the archives created for the current machine/key, providing for means to manage, inspect and restore archives. You can already notice the <em>Tarsnap-tutorial</em> archive. Let's double click that item to get a detailed look:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-8.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-8-500x500.png" alt="Tarsnap-tutorial-8" /></a></p>
+<p>You can notice several things from this view that describe an archive in Tarsnap terms:</p>
+<ol>
+<li>The archive name, <em>Tarsnap-tutorial</em> in this case. The name can be any arbitrary combination of characters, excluding the null character and must be unique amongst all the existing archives.</li>
+<li>The archive size, 4.83MB in this case. This is the original size of all the items included in a backup, before deduplication  and compression.</li>
+<li>Unique data, 2.15MB in this case, what you pay for. This is the archive size post deduplication and compression. As you can see, Tarsnap is smart enough not to waste your credit on duplicate data, even for single archives.</li>
+<li>A command. This is the exact command-line used by the application to create the archive. Every single action executed by the GUI app has a direct command-line equivalent, which can be reviewed in the Help -&gt; Console pane. Total transparency, control and debugging capability. You can even use this to learn how to operate Tarsnap at the command-line.</li>
+<li>Contents listing. This list contains all the source files and directories included in an archive.</li>
+</ol>
+<p>Every Tarsnap operation is accompanied by a status bar message. When Tarsnap is working with the server a loading circular orb will animate to indicate activity. All of the status messages are logged and can be reviewed by expanding the Journal with a click on the arrow head in the status bar.</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-9.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-9-500x500.png" alt="Tarsnap-tutorial-9" /></a></p>
+<h2 id="using-jobs">Using Jobs</h2>
+<p>The obvious evolution from simple on-demand one-shot backups are Jobs, logical definitions for important locations in your file system that you know are going to be backed up regularly. These could be your Documents, Work or Desktop directories. Let's define one now for the <em>Tarsnap tutorial</em> directory used previously, by switching to the <em>Jobs</em> tab, clicking on <em>Add Job</em> button and filling up the Job specifics:</p>
+<p> </p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-10.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-10-500x462.png" alt="Tarsnap-tutorial-10" /></a></p>
+<p>So a Job is:</p>
+<ol>
+<li>A name, <em>Tarsnap Tutorial</em>, in this case. This name is prepended to the archive names for this Job.</li>
+<li>Files and directories selected in the File System tab. This is what you want to back up as part of this Job.</li>
+<li>Options particular to this Job. We'll take a look at this later on.</li>
+<li>Archives pertaining to this Job. None yet thus pane is disabled.</li>
+</ol>
+<p>Let's change fact no. 4 and create the first backup for this <em>Tarsnap Tutorial</em> by <em>Saving</em> the Job and then clicking the <em>Backup</em> button for the Job entry that appeared in the list:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-11.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-11-500x348.png" alt="Tarsnap-tutorial-11" /></a></p>
+<p>A couple seconds later:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-12.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-12-500x440.png" alt="Tarsnap-tutorial-12" /></a></p>
+<p>Double click the resulting archive in the updated <em>Job -&gt; Archives</em> pane and let's take a look at the result:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-13.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-13-500x464.png" alt="Tarsnap-tutorial-13" /></a></p>
+<p>A Job archive has all the properties as the previously created on-demand archive. A couple observations are worth noting:</p>
+<ol>
+<li>The <em>Job_</em> prefix is prepended to the archive name;</li>
+<li>The archive has a reference to the <em>Tarsnap Tutorial</em> Job. You can jump to the <em>Tarsnap Tutorial</em> job by clicking on the Job icon in the archive listing or the <em>Job:</em> label;</li>
+<li>I've added 5 extra screenshots to the directory since the previous on-demand archive. If you take a look at the <em>Unique data</em> label you'll notice that only 1.25MB of data has actually been uploaded to the Tarsnap server and thus you'll only be charged for that. This is the <strong>deduplication</strong> magic in action that works between all archives created with the same key and will save you a lot in the long term when backing up from the same sources of data in what amounts to, basically, incremental backups.</li>
+<li>Tarsnap also <strong>compresses your data</strong> after deduplication step for maximum storage, bandwidth and resulting cost efficiency. In this case I'm backing up PNG files which are already compressed data formats (also MPG, AVI, MP3, MP4; in general any modern media format has some level of compression), but if I were to backup source code, text files, documents and other raw formats the amount of savings will be even greater. This also means that it's pointless and even detrimental to the efficiency of Tarsnap if you're compressing your files manually before using Tarsnap.</li>
+</ol>
+<p>This is the basics of using Jobs with Tarsnap GUI. What you should do next is define individual Jobs for each of your important file system locations like Documents, Pictures, Desktop and your Work directory. You can back up all your Jobs at once by clicking on the <em>Add job</em> button drop down and <em>Backup all jobs</em> or selecting all Jobs and hitting CMD+b keyboard combo. For a full listing of keyboard shortcuts available see <em>Help</em> pane.</p>
+<p>Next we're going to take a look at scheduling automated backups for Jobs.</p>
+<h2 id="scheduling">Scheduling</h2>
+<p>At the moment, scheduling automated backups for your Jobs requires a bit of knowledge about your Operating System scheduler and some degree of manual work. Given that Tarsnap GUI is cross-platform (OS X, BSDs, Linuxes and Windows in the future) and that every platform usually differs in the best choice for scheduling, it's quite tricky to code a solution that applies elegantly and reliably for all, so for the meantime we're left with a manual approach. I'm working towards changing that in a future release, if you want to find out when that happens it's best you either follow the project on Github or subscribe to the tarsnap-users mail list (links at the bottom of this post).</p>
+<p>The best scheduling method on OS X is <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html">Launchd</a>. Tarsnap GUI executable has a command line parameter called --jobs:</p>
+<p>/Applications/Tarsnap.app/Contents/MacOS/Tarsnap -h
+Usage: Tarsnap [options]
+Tarsnap GUI - Online backups for the truly lazy</p>
+<p>Options:
+...
+-j, --jobs Executes all jobs sequentially that have the 'Include in scheduled backups' option checked. The application runs headless and useful information is printed to standard out and error.</p>
+<p>You can probably figure out what's coming next. We're going to schedule <em>Tarsnap --jobs</em> with Launchd to run on a schedule. Before we do that we need to enable <em>Tarsnap Tutorial</em> job for inclusion into automatic backups (-j). There's an option for that, named <em>Include in scheduled backups</em>:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-14.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-14-500x464.png" alt="Tarsnap-tutorial-14" /></a></p>
+<p>The option is disabled by default and you need to check it as shown in the screenshot.</p>
+<p>For the last step you need to open Terminal and download a sample Plist file that describers the invocation routine for Launchd to the appropriate location and enabe it using launchctl command. You can take a look at the sample plist from the <a href="https://github.com/Tarsnap/tarsnap-gui/blob/master/util/com.tarsnap.backup.plist">repo on Github</a>:</p>
+<p>curl https://raw.githubusercontent.com/Tarsnap/tarsnap-gui/master/util/com.tarsnap.backup.plist &gt; ~/Library/LaunchAgents/com.tarsnap.backup.plist
+launchctl load ~/Library/LaunchAgents/com.tarsnap.backup.plist</p>
+<p>This launchd script will invoke <em>Tarsnap -j</em> every Sunday at 10AM or the next wake from sleep or system boot right after that (for cron fans, beware that crond doesn't do that on OS X). So the next time when that date comes around all Jobs that have the <em>Include in scheduled backups</em> option enabled will be backed up. Let's do a test run now and see what happens:</p>
+<p>/Applications/Tarsnap.app/Contents/MacOS/Tarsnap -j</p>
+<p>Assuming you have notifications enabled on OS X (otherwise you're stuck with the output in Terminal) this is what you'll see:</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-15.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-15-500x358.png" alt="Tarsnap-tutorial-15" /></a></p>
+<p>When executing Jobs in the background, Tarsnap GUI will have an icon in the menu bar and desktop notifications will notify you of what's happening. If you click the tray icon or the  notifications the app will fire up.</p>
+<p>Now if you're reading this with Linux or BSD in mind, all you have to do to schedule your backups is replace Launchd with something like crond.</p>
+<h2 id="restore">Restore</h2>
+<p>What use are backups though without a simple method for restoring backed up data in case of need? Tarsnap GUI takes care of that without much fuss. Let's delete the <em>Tarsnap tutorial</em> directory and attempt a restore from the latest <em>Tarsnap Tutorial</em> backup by clicking on <em>Restore latest archive</em> button for the Job.</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-16.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-16-500x321.png" alt="Tarsnap-tutorial-16" /></a></p>
+<p>Clicking <em>Restore</em> immediately commences the restoration of files in the last <em>Tarsnap Tutorial</em> backup.</p>
+<p><a href="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-17.png"><img src="https://shinnok.com/rants/2016/02/using-tarsnap-gui-on-os-x/images/Tarsnap-tutorial-17-500x459.png" alt="Tarsnap-tutorial-17" /></a></p>
+<p>A couple seconds later, lo and behold, I have my work on this tutorial back. Not much of a surprise huh? Nobody likes surprises when it comes to backups anyway.</p>
+<h2 id="afterword">Afterword</h2>
+<p>While Tarsnap CLI and Tarsnap GUI is capable of much more than what is laid out in this primer, I hope this was enough of an introduction to get your feet wet and encourage you to start exploring the other things you can do with this setup on your own. If you prefer reading this tutorial in a PDF version <a href="https://trunk.shinnok.com/Tarsnap-GUI-tutorial-v1.0.pdf">here you go</a>.</p>
+<p>Relevant links:</p>
+<p>Tarsnap website: <a href="https://www.tarsnap.com">https://www.tarsnap.com</a></p>
+<p>Tarsnap on Github: <a href="https://github.com/Tarsnap">https://github.com/Tarsnap</a></p>
+<p>Tarsnap mail lists: <a href="https://www.tarsnap.com/lists.html">https://www.tarsnap.com/lists.html</a></p>
+<p>Tarsnap GUI releases: <a href="https://github.com/Tarsnap/tarsnap-gui/releases">https://github.com/Tarsnap/tarsnap-gui/releases</a></p>
+<p>Tarsnap GUI Wiki: <a href="https://github.com/Tarsnap/tarsnap-gui/wiki/Tarsnap">https://github.com/Tarsnap/tarsnap-gui/wiki/Tarsnap</a></p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

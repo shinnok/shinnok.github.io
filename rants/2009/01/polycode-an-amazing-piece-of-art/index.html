@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2009&#x2F;01&#x2F;polycode-an-amazing-piece-of-art&#x2F;">Polycode, an amazing piece of art!</a>
+</h2>
+<p class="subtitle"><strong>2009-01-21</strong></p>
+</div>
+<div class="item">
+<p>As stated in the title i have truly came over an amazing piece of art:</p>
+<p><a href="https://mauke.ath.cx/stuff/poly.html">https://mauke.ath.cx/stuff/poly.html</a></p>
+<p>Hit view source on that and stare at pretty strange,at the first look,source code. Well that source, my friends, is neither html, c, python or perl it is all of them, plus some more.The above linked source code compiles/interprets and runs under all of these languages: html+js, c/c++, python, perl, ruby, bash, sh, zsh, haskell, makefile, tcl and <a href="https://en.wikipedia.org/wiki/Brainfuck">brainfuck</a>.</p>
+<p>I've tested the source on all of them just to make sure that it isn't a <em>joke</em> and it isn't! even if we count <a href="https://www.haskell.org/">haskell</a> which in my case it didn't interpret (i used <a href="https://www.haskell.org/hugs/">hugs</a> but it didn't work for some reason and i didn't insist). Here is some proof output for the unbelievers:</p>
+<blockquote>
+<p>shinnok@donkey:/tmp$ wget https://mauke.ath.cx/stuff/poly.html --2009-01-21 18:26:11-- https://mauke.ath.cx/stuff/poly.html Resolving mauke.ath.cx... 91.67.1.238 Connecting to mauke.ath.cx|91.67.1.238|:80... connected. HTTP request sent, awaiting response... 200 OK Length: 2376 (2.3K) [text/html] Saving to: `poly.html'</p>
+<p>100%[======================================&gt;] 2,376 --.-K/s in 0.001s</p>
+<p>2009-01-21 18:26:12 (2.21 MB/s) - `poly.html' saved [2376/2376]</p>
+<p>shinnok@donkey:/tmp$ python poly.html I'm a Python program. shinnok@donkey:/tmp$ perl poly.html I'm a Perl program. shinnok@donkey:/tmp$ ruby poly.html I'm a Ruby program. shinnok@donkey:/tmp$ cp poly.html poly.c shinnok@donkey:/tmp$ gcc -o poly poly.c poly.c:37:20: warning: trigraph ??! ignored, use -trigraphs to enable shinnok@donkey:/tmp$ ./poly I'm a C program (C89 with // comments, trigraphs disabled). shinnok@donkey:/tmp$ cp poly.html Makefile shinnok@donkey:/tmp$ make I'm a Makefile. shinnok@donkey:/tmp$ beef poly.html I'm a brainfuck program. shinnok@donkey:/tmp$ tclsh poly.html I'm a tcl script. shinnok@donkey:/tmp$ sh poly.html I'm a bash script. shinnok@donkey:/tmp$ zsh poly.html I'm a zsh script. shinnok@donkey:/tmp$ bash poly.html I'm a bash script.</p>
+</blockquote>
+<p>I find it amazing the way the writer of that piece of poly-code managed to use various syntactic and lexical as well as operators and language specific tricks in order to get that same piece of code to compile/interpret and run on all of those languages.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

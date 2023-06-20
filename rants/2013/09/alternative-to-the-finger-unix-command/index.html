@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2013&#x2F;09&#x2F;alternative-to-the-finger-unix-command&#x2F;">Alternative to the finger Unix command</a>
+</h2>
+<p class="subtitle"><strong>2013-09-18</strong></p>
+</div>
+<div class="item">
+<p>Every once in a while I stumble on this question on yet too many forums and Q&amp;A sites:</p>
+<blockquote>
+<p>Is there an alternative to the finger command?</p>
+</blockquote>
+<p>The simple answer is yes! There is an <em>official</em> replacement for the original finger command and it's part of the gnu coreutils package, it is called <strong>pinky</strong>(<a href="https://linux.die.net/man/1/pinky">1</a>) and it's available on all systems that use the gnu coreutils.</p>
+<p>--</p>
+<p>The long answer is, no, there isn't really a real replacement to the original remote enabled <a href="https://en.wikipedia.org/wiki/Finger_protocol">finger protocol</a> along with the fingerd daemon and finger client. While it did make sense and has seen its fair share of usage in the early days of the Internet,  it has been considered obsolete and a security issue for way over a decade now, thus all of the modern Linux distributions and Unix flavors don't install the service nor the client by default anymore, some don't even include them in their repositories at all.</p>
+<p>So now, most of the replacement tools and commands that one can use instead of finger are going to act on the local machine only and provide logged in user info only for the current host. One such tool is pinky of course and it's output similar to:</p>
+<blockquote>
+<p>$ pinky Login Name TTY Idle When Where shinnok Shinnok pts/0 2013-09-18 07:32 127.0.0.1 andy        Andy pts/1 2013-09-18 07:32 127.0.0.2</p>
+</blockquote>
+<p>As you can see the output is pretty similar to the <strong>who</strong>(<a href="https://linux.die.net/man/1/who">1</a>) command(it was actually ported from who.c), nothing special about it. The other traditional alternatives to the finger command include <strong>w</strong>(<a href="https://linux.die.net/man/1/w">1</a>) and <strong>users</strong>(<a href="https://linux.die.net/man/1/users">1</a>).</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

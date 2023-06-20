@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div class="item" id="books">
+    <h2>Recommended books</h2><br />
+    <ul class="books-gallery">
+       <li><a href="http://www.amazon.com/gp/product/0131103628/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0131103628" target="blank"><img src="/reading/books/c_lang_brian_kernighan.jpg"></img>C Programming Language (2nd Edition)</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0201700735/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0201700735" target="blank"><img src="/reading/books/cpp_lang_bjarne_stroustru.jpg"></img>The C++ Programming Language: Special Edition</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0139798099/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0139798099" target="blank"><img src="/reading/books/thinking_in_cpp_bruce_eckel.jpg"></img>Thinking in C++</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0201657880/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0201657880" target="blank"><img src="/reading/books/programming_pearls_jon_bentley.jpg"></img>Programming Pearls (2nd Edition)</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0735617228/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0735617228" target="blank"><img src="/reading/books/writing_secure_code_mhoward_dleblanc.jpg"></img>Writing Secure Code</a></li>
+       <li><a href="http://www.amazon.com/gp/product/020161586X/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=020161586X" target="blank"><img src="/reading/books/the_practice_of_programming_bkernighan_rpike.jpg"></img>The Practice of Programming</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0672329468/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0672329468" target="blank"><img src="/reading/books/linux_kernel_development_robert_love.jpg"></img>Linux Kernel Development (3rd Edition)</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0596003307/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0596003307" target="blank"><img src="/reading/books/unix_power_tools_oreilly.jpg"></img>Unix Power Tools, Third Edition</a></li>
+       <li><a href="http://www.amazon.com/gp/product/047008023X/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=047008023X" target="blank"><img src="/reading/books/the_shellcoders_handbook.jpg"></img>The Shellcoder's Handbook: Discovering and Exploiting Security Holes</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0764574817/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0764574817" target="blank"><img src="/reading/books/reversing-secrets-of-reverse-engineering.jpg"></img>Reversing: Secrets of Reverse Engineering</a></li>
+       <li><a href="http://www.amazon.com/gp/product/1593271441/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=1593271441" target="blank"><img src="/reading/books/hacking_the_art_of_exploitation.jpg"></img>Hacking: The Art of Exploitation, 2nd Edition</a></li>
+       <li><a href="http://www.amazon.com/gp/product/0470170778/ref=as_li_tf_tl?ie=UTF8&tag=shinnok-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0470170778" target="blank"><img src="/reading/books/the_webapp_hackers_handbook.jpg"></img>The Web Application Hacker's Handbook: Discovering and Exploiting Security Flaws</a></li>
+    </ul>
+</div>
+<div class="item" id="ezines">
+    <h2>Ezines</h2>
+    <ul>
+        <li>
+            <h3>Zero For Owned</h3>
+            <ul>
+                <li><a href="/reading/zfo/zfo1.txt">ZFO 1</a></li>
+                <li><a href="/reading/zfo/zfo2.txt">ZFO 2</a></li>
+                <li><a href="/reading/zfo/zfo3.txt">ZFO 3</a></li>
+                <li><a href="/reading/zfo/zfo4.txt">ZFO 4</a></li>
+                <li><a href="/reading/zfo/zfo5.txt">ZFO 5</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2009&#x2F;03&#x2F;symantec-creates-havoc-with-unsigned-norton-patch-piftsexe&#x2F;">Symantec creates havoc with unsigned Norton patch - PIFTS.EXE</a>
+</h2>
+<p class="subtitle"><strong>2009-03-11</strong></p>
+</div>
+<div class="item">
+<blockquote>
+<h3 id="conspiracy-theories-fly-around-norton-forum-pifts-purge">Conspiracy theories fly around Norton forum 'Pifts' purge</h3>
+<p>Conspiracy theories are running rampant in the absence of a clear explanation of why Symantec deleted threads expressing concern about a file called pifts.exe from its Norton support forums.</p>
+<p>Many users running Norton Internet Protection began seeing a popup warning on Monday that a file called PIFTS.exe on their systems was trying to access the internet. The location of the file was given as a non-existent folder buried inside the Symantec LiveUpdate folder.</p>
+<script type="text/javascript"><!-- RegAd('mpu1', 'reg.security.4159/front', 'pos=top;sz=336x280', VCs); // --></script>
+<p>&amp;amp;amp;amp;amp;amp;amp;lt;a href=&quot;https://ad.uk.doubleclick.net/jump/reg.security.4159/front;tile=2;pos=top;dcove=d;sz=336x280;ord=-@uyqtRk6j0AACu-W0oAAAEQ?&quot; target=&quot;_blank&quot;&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;img src=&quot;https://ad.uk.doubleclick.net/ad/reg.security.4159/front;tile=2;pos=top;dcove=d;sz=336x280;ord=-@uyqtRk6j0AACu-W0oAAAEQ?&quot; alt=&quot;&quot;&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;amp;gt;</p>
+<p>The appearance of a file in a non-existent folder suggests rootkit-like behaviour. PIFTS.exe attempts to contact a server in Africa, which has been traced to Symantec.</p>
+<p>Concerned punters started posting on Norton's support forums, asking what was going on. That's all normal enough, but then discussions on the subject were deleted without explanation from Norton's community pages. Follow-up threads mentioning the issue were deleted even more quickly.</p>
+<p><a href="https://www.theregister.co.uk/2009/03/10/norton_pifts_mystery/">source</a></p>
+</blockquote>
+<blockquote>
+<h3 id="symantec-creates-havoc-with-unsigned-norton-patch">Symantec creates havoc with unsigned Norton patch</h3>
+<p>Symantec released a diagnostic patch for some of its older Norton products on Monday night that did not identify its origin and thus triggered alerts on user firewalls, the company said Tuesday.</p>
+<p>The patch for 2006 and 2007 versions of Norton Internet Security and Norton Antivirus, a program dubbed &quot;PFST.exe,&quot; (Product Information Framework Trouble Shooter) was distributed to collect anonymous statistics on matters such as how many computers are using the products and what operating system they are running, Jeff Kyle, group product manager for Symantec consumer products, said Tuesday.</p>
+<p>Because it was unsigned--a result of human error--firewalls started prompting users with messages asking them if they trust the patch, Kyle said. Of course, because the patch had no signature indicating it was from Symantec, users didn't know whether to trust it and many of them went to the Norton user forum for answers.</p>
+<p>The company pulled the patch after three hours and then unwittingly laid the groundwork for conspiracy theorists after it started deleting forum posts related to the matter. The company was not censoring the posts, but fighting off a spam attack, according to Kyle.</p>
+<p>&quot;At the same time we were pulling down the patch a spammer created a new account on our forum and minutes after that there were 200 new users all targeting the same thread,&quot; he said. &quot;Within the first hour there were like 600 posts to that thread. Obviously it was a bot creating this.&quot;</p>
+<p>The posts were written with poor grammar and broken English and some were vulgar and nonsensical. It is possible, though, that Symantec could have inadvertently deleted some legitimate posts while it was purging the spam, Kyle said.</p>
+<p>&quot;There is no conspiracy theory. There's nothing we are hiding at all,&quot; Kyle added.</p>
+<p>Meanwhile, Kyle said he isn't sure whether or when Symantec will redistribute the patch, but if they do, he said, it will be signed.</p>
+<p>Symantec has more information on its <a href="https://community.norton.com/norton/board/message?board.id=nis_feedback&amp;thread.id=39119&amp;jump=true">message board site</a>. <a href="https://blog.washingtonpost.com/securityfix/">The Washington Post reported</a> that hackers were exploiting the situation and had managed to get malicious Web sites into top Google search results for &quot;pifts.exe.&quot;</p>
+<p><a href="https://news.cnet.com/8301-1009_3-10192899-83.html?part=rss&amp;subj=news&amp;tag=2547-1_3-0-20">source</a></p>
+</blockquote>
+<p>Digg in:</p>
+<p><a href="https://chrysler5thavenue.blogspot.com/2009/03/piftsexe.html">https://chrysler5thavenue.blogspot.com/2009/03/piftsexe.html</a></p>
+<p><a href="https://www.abovetopsecret.com/forum/thread444230/pg1">https://www.abovetopsecret.com/forum/thread444230/pg1</a></p>
+<p><a href="https://blogs.howstuffworks.com/2009/03/10/what-is-piftsexe/">https://blogs.howstuffworks.com/2009/03/10/what-is-piftsexe/</a></p>
+<p><a href="https://www.theregister.co.uk/2009/03/10/norton_pifts_mystery/">https://www.theregister.co.uk/2009/03/10/norton_pifts_mystery/</a></p>
+<p><a href="https://news.cnet.com/8301-1009_3-10192899-83.html?part=rss&amp;subj=news&amp;tag=2547-1_3-0-20">https://news.cnet.com/8301-1009_3-10192899-83.html?part=rss&amp;subj=news&amp;tag=2547-1_3-0-20</a></p>
+<p><a href="https://isc.sans.org/diary.html?storyid=5992">https://isc.sans.org/diary.html?storyid=5992</a></p>
+<p><a href="https://it.slashdot.org/article.pl?sid=09/03/10/139229">https://it.slashdot.org/article.pl?sid=09/03/10/139229</a></p>
+<p><a href="https://www.tech-linkblog.com/2009/03/conspiracy-theories-run-rampant-due-to-piftsexe.html/">https://www.tech-linkblog.com/2009/03/conspiracy-theories-run-rampant-due-to-piftsexe.html/</a></p>
+<p><a href="https://voices.washingtonpost.com/securityfix/2009/03/symantec_users_complain_of_mys.html">https://voices.washingtonpost.com/securityfix/2009/03/symantec_users_complain_of_mys.html</a></p>
+<p><a href="https://community.norton.com/norton/board/message?board.id=nis_feedback&amp;thread.id=39119">https://community.norton.com/norton/board/message?board.id=nis_feedback&amp;thread.id=39119</a></p>
+<p><a href="https://www.virustotal.com/analisis/734465e30a6ee6d6c493471d77940f4c">https://www.virustotal.com/analisis/734465e30a6ee6d6c493471d77940f4c</a></p>
+<p><a href="https://www.threatexpert.com/report.aspx?md5=91b564d825a3487ae5b5fafe57260810">https://www.threatexpert.com/report.aspx?md5=91b564d825a3487ae5b5fafe57260810</a></p>
+<p><a href="https://www.mediafire.com/download.php?iotyqjbrmry">https://www.mediafire.com/download.php?iotyqjbrmry</a> - pifts.exe asm code from IDA and C-like decompiled pseudocode from HexRays Decompiler</p>
+<p>The disassembly of the binary doesn't look out of the ordinary and after a quick look at the PIFTS.c decompiled code in the above archive it seems that symantec is <a href="https://community.norton.com/norton/board/message?board.id=nis_feedback&amp;thread.id=39119">telling</a> nothing but the truth.</p>
+<p>Snips:</p>
+<blockquote>
+<p>$cat PIFTS.c | grep -i RegOpenKey // LSTATUS __stdcall RegOpenKeyExW(HKEY hKey, LPCWSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult); idb v1 = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey); if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) &amp;&amp; (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey)</p>
+</blockquote>
+<blockquote>
+<p>$cat PIFTS.c | grep -i http extern wchar_t aHttpStats_nort[40]; // weak sub_402210((int)L&quot;https://stats.norton.com/n/p?module=2667&quot;, (int)&amp;lpszUrl);</p>
+</blockquote>
+<blockquote>
+<p>$cat PIFTS.c | grep -i symantec v1 = RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey); if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) &amp;&amp; (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) if ( RegOpenKeyExW(HKEY_LOCAL_MACHINE, L&quot;Software\\Symantec\\InstalledApps&quot;, 0, 1u, &amp;hKey) L&quot;SOFTWARE\\Symantec\\PIF\\{B8E1DD85-8582-4c61-B58F-2F227FCA9A08}\\PifEngine&quot;, L&quot;SOFTWARE\\Symantec\\PIF\\{B8E1DD85-8582-4c61-B58F-2F227FCA9A08}\\HbEngine&quot;, L&quot;SOFTWARE\\Symantec\\PIF\\{96E26A03-A25A-400b-B9B4-564C9BD00F46}&quot;,</p>
+</blockquote>
+<p>For me it doesn't sound like much of a conspiracy or an uber slick big brother spyware because <a href="https://community.norton.com/norton/board/message?board.id=nis_feedback&amp;thread.id=39119">Symantec's explanation</a> of pifts.exe is somewhat reasonable although the method they used to get the stats is questionable and unprofessional(don't they have test systems, labs or networks? why push stuff that should be tested in the &quot;development labs&quot; to clients? clients are not a testing platform) and Symantec removing forum posts when they look like <a href="https://nl.tinypic.com/view.php?pic=2nvtmbn&amp;s=5">this</a> doesn't bother me either. People who started this fire are ones who don't have the skills to reverse engineer an executable because if they did they would know that there isn't really nothing interesting in pifts code. Another reason for this might be this one too:</p>
+<blockquote>
+<p>Finally, it has also been reported by the Washington Post that hackers are taking advantage of this situation. &quot;Some of the top searches (currently the 3rd and 4th result in a Google search) are Web sites that try to install malicious software when you visit them.&quot; When searching for information on &quot;pifts.exe,&quot; Symantec strongly advises all users to be wary of following links to unknown sites as malicious users are attempting to use this hot topic to distribute malware.</p>
+</blockquote>
+<p>Although it is hard to believe that this was a planned scam because you really have to be a con mastermind in order to think(of it previously and wait for the right moment), spot the apropriate moment(symantec's pifts.exe unsigned and questionable push update), prepare(create bogus trap websites/page related to the subject and embedd exploit+malware code) and fire the scam(make people believe your conspiracy theory-the symantec forums, the stories, blog posts) then watch your botnet(s) grow. As it is written above it is more probably that bad guys saw the opportunity after the hype has been created and started to take advantage of it.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

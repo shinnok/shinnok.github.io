@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2015&#x2F;10&#x2F;johnny-2-0-reloaded&#x2F;">Johnny 2.0 (reloaded)</a>
+</h2>
+<p class="subtitle"><strong>2015-10-02</strong></p>
+</div>
+<div class="item">
+<p><a href="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnny.png"><img src="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnny-500x500.png" alt="johnny" /></a></p>
+<p>Johnny, the GUI interface for the popular John the Ripper password cracker has received quite some love this past summer in an orchestrated effort to pick it up and drag it beyond the stale 1.0 branch.</p>
+<h3 id="johnny-who">Johnny who</h3>
+<p>Johnny is the cross-platform Open Source GUI frontend for the infamous password security testing suite John the Ripper. It was originally proposed and designed by your's truly in 2011 as a <a href="https://openwall.info/wiki/john/GUI">POC</a>, then version 1.0 basic implementation was achieved by Aleksey Cherepanov as part of GSoC 2012. Nothing much else happened beyond the 1.1 fix release.</p>
+<p>Johnny's original aim is to automate and simplify the password testing/cracking routine across all major desktops with the help of the tremendously versatile and robust John the Ripper suite, as well as add extra functionality on top of it, specific to the desktop and GUI paradigms in contrast to the command line, like improved hash and password handling, multiple attacks and session management, easily define and test complex attack rules, visual feedback and statistics, all of it by building on the immense capabilities and features already offered by both JtR core/proper as well as jumbo flavors.</p>
+<h3 id="johnny-2-0-reloaded">Johnny 2.0 reloaded</h3>
+<p>Fast forward to 2015, I finally got some spare time to turn my attention towards Johnny again in order to further the stated goal for Johnny in the previous paragraph. So I devised a <a href="https://openwall.info/wiki/john/johnny-roadmap">fresh plan</a> for developing Johnny further and reconsolidate the original mission. The development plan has turned into reality with the acceptance of Mathieu Laprise as a student coder for Openwall (the org behind JtR and many other <a href="https://www.openwall.com">cool projects</a>) as part of this year's GSoC iteration. The tasks in the roadmap were split between me and Mathieu and with help from my co-mentor Aleksey Cherepanov we proceeded to the actual work involved in rebooting Johnny.</p>
+<p>Now that the summer has concluded, it's time to draw a summary of the achievements:</p>
+<ul>
+<li>Cross platform issues fixed across all latest versions of supported Operating Systems and desktops</li>
+<li>The UI has been significantly revamped for improved usability, robustness and consistency and looks across latest desktop paradigms</li>
+<li>Full translation and I18N support added (only French for now, contribute translations to your own language on github)</li>
+<li>Attack session history and persistence, easier to define new attacks</li>
+<li>Greater coverage of JtR core and jumbo functionality (fork, jumbo attack modes, hash format detection)</li>
+<li>Improved input and output options (2john format conversion support, export to CSV)</li>
+<li>Smarter Passwords table (ability to show hash format, filter, sort, include/exclude from attack)</li>
+<li>You can now test passwords manually via the Guess button</li>
+</ul>
+<p>Overall Johnny is faster, more robust, better looking and much more equipped and forward looking (code and internals wise) than the previous incarnation and resulted in a significant code/ui refactoring of the original codebase (maybe 80% rewrite). All of the goodness described above and <a href="https://github.com/shinnok/johnny/blob/v2.2/CHANGELOG">more</a> was delivered to users in <a href="https://github.com/shinnok/johnny/releases">three releases</a> starting with a major version bump to 2.0 to reinstate the fresh reboot and outlook for the project. The latest release is <a href="https://github.com/shinnok/johnny/releases/tag/v2.2">v2.2</a> and is considered to be stable and feature packed enough to be called the official GUI for John the Ripper. There are binary packages for Windows and OS X and detailed source build instructions for the other platforms on the <a href="https://openwall.info/wiki/john/johnny">wiki page for Johnny</a>, thus I urge you to give it a spin and leave feedback here, on <a href="https://github.com/shinnok/johnny">Github</a> (where the project is hosted and tracked) or on the <a href="https://www.openwall.com/lists/">john-users</a> mailing list. As always, contribution of any kind is very appreciated.</p>
+<h3 id="acknowledgementsgsoc2015-300x270">Acknowledgements<img src="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/gsoc2015-300x270.jpg" alt="gsoc2015-300x270" /></h3>
+<p> </p>
+<p>Thanks to Mathieu Laprise for his important and dedicated contribution to Johnny as a student coder for <a href="https://developers.google.com/open-source/gsoc/">GSoC 2015</a> and we hope to hear back from him from time to time. Big thanks to the entire john-dev community and Aleksey Cherepanov. Also an extended appreciation goes to Google for their continued dedication to support Open Source and contribute big bucks in the process.</p>
+<p> </p>
+<p> </p>
+<p><a href="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnnyscreen-3.png"><img src="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnnyscreen-3-500x281.png" alt="Johnny on Ubuntu" /></a> Johnny on Ubuntu</p>
+<p><a href="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnnyscreen-1.png"><img src="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnnyscreen-1-500x300.png" alt="Johnny on Gnome 3" /></a> Johnny on Gnome 3</p>
+<p><a href="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnnyscreen-5.png"><img src="https://shinnok.com/rants/2015/10/johnny-2-0-reloaded/images/johnnyscreen-5-500x317.png" alt="Johnny on OS X Yosemite" /></a> Johnny on OS X Yosemite</p>
+<p> </p>
+<p><a href="https://www.openwall.info/wiki/john/johnny">https://www.openwall.info/wiki/john/johnny</a></p>
+<p><a href="https://github.com/shinnok/johnny">https://github.com/shinnok/johnny</a></p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div class="item" id="programming">
+    <h2><a href="#programming">Programming/Scripting</a></h2>
+    <ul>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Asp.net">ASP.NET</a>/<a href="http://en.wikipedia.org/wiki/VBScript">VBScript</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/asp-vbs/asp-vbs-cheat-sheet-v1.pdf">ASP/VBS Cheatsheet</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Awk">AWK</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/awk/awk_cheatsheet.pdf">AWK Cheatsheet</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/C_%28programming_language%29">C</a>/<a href="http://en.wikipedia.org/wiki/C%2B%2B">C++</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/c-cpp/ansi-c-refcard-a4.pdf">C Reference Card (ANSI)</a></li>
+                <li><a href="/cheatsheets/programming-scripting/c-cpp/c_cheat_sheet.pdf">C/C++ Cheat Sheet (v1)</a></li>
+                <li><a href="/cheatsheets/programming-scripting/c-cpp/c-cheatsheet.pdf">C Cheat Sheet</a></li>
+                <li><a href="/cheatsheets/programming-scripting/c-cpp/cpp_reference_sheet.pdf">C++ Reference Sheet</a></li>
+                <li><a href="/cheatsheets/programming-scripting/c-cpp/stl-quick-reference-1.29.pdf">STL Quick Reference</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/csharp/cheatsheet-csharp-vs-vb.pdf">C# and VB.NET Comparison Cheat Sheet</a></li>
+                <li><a href="/cheatsheets/programming-scripting/csharp/core-csharp-and-dotnet-quick-reference.pdf">Core C# and .NET Quick Reference</a></li>
+                <li><a href="/cheatsheets/programming-scripting/csharp/csharp_basics_reference_sheet.pdf">C# Reference Sheet - Basics</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Delphi_programming_language">Delphi</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/delphi/delphi-quick-reference-card.pdf">Delphi Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/delphi/delphi-technical-reference-card-7.20.pdf">Delphi Technical Reference Card</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Erlang_%28programming_language%29">Erlang</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/erlang/erlang-cheatsheet-1.0.pdf">Erlang CheatSheet v1.0</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Fortran">Fortran</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/fortran/fortran90_refcard.pdf">Fortran 90 Reference Card</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Java_%28programming_language%29">Java</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/java/java_quickref.pdf">JAVA Quick Reference</a></li>
+                <li><a href="/cheatsheets/programming-scripting/java/java-programming-guide-quick-reference.pdf">Java Programming Guide - Quick Reference</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/JavaServer_Pages">JSP</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/jsp/jsp-quick-reference-card.pdf">JSP Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/jsp/jsp-syntax.pdf">JAVASERVER PAGES SYNTAX</a></li>
+                <li><a href="/cheatsheets/programming-scripting/jsp/jsp-syntax-2.0.pdf">JAVASERVER PAGES SYNTAX version 2.0</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library">MFC</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/mfc/mfc-quick-reference.pdf">Microsoft Foundation Class (MFC) Quick Reference</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Perl">PERL</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl.pack.unpack.printf.cheat.sheet.pdf">Perl pack/unpack Summary</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl.predefined.variables.pdf">Perl Predefined Variables</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl_quickref.pdf">Perl Quick Reference Guide</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl_refcard.pdf">Perl Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl-best-practices-cheatsheet.pdf">Perl Best Practices Reference Guide</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl-debugger-refcard.pdf">Perl Debugger Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl-quick-reference-card.pdf">Perl Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl-regexp-refcard.pdf">Perl Regular Expression Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl-re-quick-reference.pdf">PERL Regular Expression Quick Reference 1.04</a></li>
+                <li><a href="/cheatsheets/programming-scripting/perl/perl-win32-quick-reference.pdf">PERL Win32 Quick Reference</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/PHP">PHP</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/php/php-4-reference-card.pdf">PHP4 Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/php/php-cheatsheet-v1.pdf">PHP Cheatsheet v1</a></li>
+                <li><a href="/cheatsheets/programming-scripting/php/php-cheatsheet-v2.pdf">PHP Cheatsheet v2</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29">PYTHON</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/python/python.pdf">Python Quick Reference</a></li>
+                <li><a href="/cheatsheets/programming-scripting/python/python_refcard.pdf">Python 2.5 Reference Card</a></li>
+                <li><a href="/cheatsheets/programming-scripting/python/python-cheat-sheet-v1.pdf">Python Cheatsheet v1</a></li>
+                <li><a href="/cheatsheets/programming-scripting/python/python-quick-reference-card-2.4.pdf">Python 2.4 Quick Reference Card</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Ruby_%28programming_language%29">Ruby</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/ruby/ruby-on-rails-cheat-sheet-v1.pdf">Ruby on Rails Cheatsheet v1</a></li>
+                <li><a href="/cheatsheets/programming-scripting/ruby/ruby-cheatsheet.pdf">Ruby Cheatsheet v1</a></li>
+                <li><a href="/cheatsheets/programming-scripting/ruby/ruby-library-quickref.pdf">Ruby Standard Library QuickRef</a></li>
+                <li><a href="/cheatsheets/programming-scripting/ruby/rubyonrails-cheatsheet.pdf">Ruby On Rails � A Cheatsheet</a></li>
+                <li><a href="/cheatsheets/programming-scripting/ruby/ruby-quickref.pdf">Ruby Language QuickRef</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Tcl">TCL</a>/<a href="http://en.wikipedia.org/wiki/Tk_%28framework%29">TK</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/tcl-tk/tcl-tk_quickref.pdf">Tcl/Tk Reference Guide</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Visual_basic">Visual Basic</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/programming-scripting/vb/vb.net-quick-reference.pdf">VB.NET Quick Reference</a></li>
+                <li><a href="/cheatsheets/programming-scripting/vb/vbasic_quickref.pdf">Visual Basic Quick Reference</a></li>
+            </ul>
+        </li>
+        <!--<li>
+            <h3><a href=""></a></h3>
+            <ul>
+                <li><a href=""></a></li>
+            </ul>
+        </li>-->
+    </ul>
+</div>
+<div class="item" id="os">
+    <h2><a href="#os">Operating Systems</a></h2>
+    <ul>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/IBM_AIX">AIX</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/os/aix/aix-quicksheet.pdf">AIX QuickSheet</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Cisco_IOS">IOS</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/os/ios/cisco_ios_versions.pdf">CISCO IOS VERSIONS</a></li>
+                <li><a href="/cheatsheets/os/ios/ios_interior_routing_protocols.pdf">CISCO IOS INTERIOR ROUTING PROTOCOLS</a></li>
+                <li><a href="/cheatsheets/os/ios/ios_ipv4_access_lists.pdf">IOS IPV4 ACCESS LISTS</a></li>
+                <li><a href="/cheatsheets/os/ios/ip-access-lists.pdf">IP ACCESS LISTS</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Solaris_%28operating_system%29">Solaris</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/os/solaris/solaris_quickref.pdf">Solaris Administrator�s Quick Reference</a></li>
+                <li><a href="/cheatsheets/os/solaris/solaris-quicksheet.pdf">Solaris QuickSheet</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Unix">UNIX</a>/<a href="http://en.wikipedia.org/wiki/Linux">LINUX</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/os/unix-linux/bash-help-sheet.pdf">Bash help sheet - shortcuts</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/bash-history-cheat-sheet.pdf">Bash History Cheat Sheet</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/bash-quick-reference.pdf">Bash Reference</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/debian-refcard-en-a4.pdf">Debian GNU/Linux Reference Card</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/fwunixref.pdf">Unix/Linux Command Reference</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux_quick_ref_card.pdf">Novell Linux Quick Reference Guide</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux_quickref.pdf">LINUX Administrator�s Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux_security_quickref.pdf">Linux Security Quick Reference Guide</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux-admin-quick-reference.pdf">LINUX Admin Quick Reference</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux-cheatsheet.pdf">Using Linux the CLI way - Cheat Sheet</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux-ref-card.pdf">UNIX/LINUX REFERENCE CARD</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/linux-system-call-quick-reference.pdf">LINUX System Call Quick Reference</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/set-operations-in-unix-shell.pdf">Set Operations in the Unix Shell</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/the-one-page-linux-manual.pdf">THE ONE PAGE LINUX MANUAL</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/unix_command_quickref.pdf">Unix commands reference card</a></li>
+                <li><a href="/cheatsheets/os/unix-linux/unix-toolbox.pdf">UNIX TOOLBOX</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://publib.boulder.ibm.com/infocenter/powersys/v3r1m5/topic/iphb1/iphb1_vios_virtualioserveroverview.htm">VIOS</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/os/vios/apv-quicksheet.pdf">APV QuickSheet</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Windows">Windows</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/os/windows/reskit_quickref.pdf">Windows Resource Kit Quick Reference</a></li>
+                <li><a href="/cheatsheets/os/windows/windows_folders_quickref.pdf">Important Windows Files Folders and Tools</a></li>
+                <li><a href="/cheatsheets/os/windows/winxp-keyboard-shortcuts.pdf">Windows XP Keyboard Shortcuts</a></li>
+                <li><a href="/cheatsheets/os/windows/xpsp2services.pdf">Windows XP SP2 services cheatsheet</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="item" id="standards">
+    <h2><a href="#standards">Standards and protocols</a></h2>
+    <ul>
+        <li>
+            <h3><a href="">Network</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/standards-protocols/network/bgp.pdf">BGP</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/eigrp.pdf">EIGRP</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/first_hop_redundancy.pdf">FIRST HOP REDUNDANCY</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ieee-8021x.pdf">IEEE 802.1X</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ieee-80211-wireless.pdf">IEEE 802.11 WIRELESS</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/IEEE_802.1X.pdf">IEEE 802.1X</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/IEEE_802.11_WLAN.pdf">IEEE 802.11 WLAN</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ipsec.pdf">IPSEC</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ipv4_multicast.pdf">IPV4 MULTICAST</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ipv4_subnetting.pdf">IPV4 SUBNETTING</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ipv4-multicast.pdf">IPV4 MULTICAST</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ipv6.pdf">IPV6</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/is-is.pdf">INTEGRATED IS-IS</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/mpls.pdf">FRAME MODE MPLS</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/nat.pdf">NETWORK ADDRESS TRANSLATION</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ospf.pdf">OSPF</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/ppp.pdf">POINT-TO-POINT PROTOCOL</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/qos.pdf">QUALITY OF SERVICE</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/spanning_tree.pdf">SPANNING TREE</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/tcpip.pdf">TCP/IP and tcpdump</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/tcpip1.pdf">TCP/IP Cheat Sheet</a></li>
+                <li><a href="/cheatsheets/standards-protocols/network/vlans.pdf">VLANS</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="">Misc</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/standards-protocols/misc/ascii.pdf">ASCII Charts</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="item" id="sql">
+    <h2><a href="#sql">SQL</a></h2>
+    <ul>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Microsoft_SQL_Server">MSSQL</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/sql/mssql/mssql-server-cheat-sheet-v1.pdf">Microsoft SQL Server Cheatsheet</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/MYSQL">MySQL</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/sql/mysql/mysql-cheat-sheet-v1.pdf">MySQL Cheatsheet</a></li>
+                <li><a href="/cheatsheets/sql/mysql/mysql_quickref.pdf">MySQL quick reference</a></li>
+                <li><a href="/cheatsheets/sql/mysql/mysqlfuncchart_1180.jpg">MySQL Functions Chart</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Oracle_Database">Oracle SQL</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/sql/oracle/oracle_sql_reference.pdf">ORACLE SQL REFERENCE CARD</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Postgresql">PostgreSQL</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/sql/postgresql/postgresql-cheat-sheet.pdf">PostgreSQL Cheatsheet</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="item" id="servers">
+    <h2><a href="#servers">Servers</a></h2>
+    <ul>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Apache_web_server">Apache</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/servers/apache/apache-quick-reference-card.pdf">Apache Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/servers/apache/mod_perl-refcard-a4.pdf">mod_perl Quick Reference Card</a></li>
+                <li><a href="/cheatsheets/servers/apache/mod_rewrite-cheat-sheet-v1.pdf">mod_rewrite Cheatsheet v1</a></li>
+                <li><a href="/cheatsheets/servers/apache/mod_rewrite-cheat-sheet-v2.pdf">mod_rewrite Cheatsheet v2</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/Sendmail">Sendmail</a></h3>
+            <ul>
+                <li><a href="/cheatsheets/servers/sendmail/sendmail-quickref.pdf">Sendmail Quick Reference</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

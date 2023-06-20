@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;07&#x2F;linux-man-pages-integration-with-qt-creator&#x2F;">Linux Man Pages integration with Qt Creator</a>
+</h2>
+<p class="subtitle"><strong>2011-07-18</strong></p>
+</div>
+<div class="item">
+<p>Inspired by my previous post on <a href="https://shinnok.com/rants/2011/07/18/using-the-qt-creator-ide-with-non-qt-projects/" title="Using the Qt Creator IDE with non Qt projects">using Qt Creator on non-Qt SDK projects</a>, I went a step further and integrated the Linux <a href="https://en.wikipedia.org/wiki/Man_page">Man Pages</a> section 2(system calls) and section 3(library functions) as a context help module in Qt Creator and Qt Assistant. Having documentation on all of the Linux system calls and system libraries at one click away(F1) is a great advantage and boost to productivity when doing system programming on Linux(and not only), especially now that Linux has around 400 system calls and GlibC 1400 functions.</p>
+<p>[gallery link=&quot;file&quot; orderby=&quot;title&quot;]</p>
+<p> </p>
+<p>The Man pages have been bundled as a Qt Compiled Help module that is easily plugged into Qt Creator or Qt Assistant. The HTML pages used are the official ones available at <a href="https://www.kernel.org/doc/man-pages/">kernel.org</a>, the <a href="https://www.kernel.org/doc/man-pages/online_pages.html">online version</a>. I have removed the Google search and StatCounter Code since they are not necessary for this purpose.</p>
+<p>The manpages are accessible by context help, when pressing F1 on a declared function like select or printf or by visiting the Help screen and browsing them alphabetically or by searching the index. You can find more information about them right there in the Help screen in the Linux Man pages category.</p>
+<p>You can download a gzipped version Qt Compiled Help Linux Manpages from here:</p>
+<p><a href="https://trunk.shinnok.com/qt/manpages.qch.gz">https://trunk.shinnok.com/qt/manpages.qch.gz</a></p>
+<p>Using it is pretty straight straight forward, open up Qt Creator and go to <em>Tools -&gt; Options -&gt; Help</em> screen. Switch over to the <em>Documentation</em> tab and then click on Add, like so:</p>
+<p><a href="https://shinnok.com/rants/2011/07/linux-man-pages-integration-with-qt-creator/images/importing-qtcreator-manpages-1.png"><img src="https://shinnok.com/rants/2011/07/linux-man-pages-integration-with-qt-creator/images/importing-qtcreator-manpages-1-500x330.png" alt="" title="importing-qtcreator-manpages-1" /></a></p>
+<p>Browse to your gunzipped manpages.qch location and click <em>Open</em>. You should now see an entry named org.kernel.manpages.1.0 that points to your supplied location:</p>
+<p><a href="https://shinnok.com/rants/2011/07/linux-man-pages-integration-with-qt-creator/images/importing-qtcreator-manpages-2.png"><img src="https://shinnok.com/rants/2011/07/linux-man-pages-integration-with-qt-creator/images/importing-qtcreator-manpages-2-500x330.png" alt="" title="importing-qtcreator-manpages-2" /></a>Remember that if you remove or move the .qch to another location Qt Creator will not be able to find it anymore, since it doesn't create a copy for itself. It's best if you put in a place that makes sense in this manner.</p>
+<p>If i see demand for this module, I'll move the instructions on how to import the <strong>Linux man pages Qt Compiled Help</strong> module, as well as download links, to the main site(shinnok.com) and I will try and update them every so often once I hear of important changes to the man pages. Till then, this will be a blog simple post.</p>
+<p>Happy hacking!</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

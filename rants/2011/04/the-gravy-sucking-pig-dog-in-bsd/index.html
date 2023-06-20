@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;the-gravy-sucking-pig-dog-in-bsd&#x2F;">The &quot;gravy sucking pig dog&quot; in BSD</a>
+</h2>
+<p class="subtitle"><strong>2011-04-14</strong></p>
+</div>
+<div class="item">
+<p>There's been a while since BSD systems have this <em>easter egg</em> in the shutdown command source, &quot;Die you gravy sucking pig dog&quot; embedded into the name of the function the performs the actual halt or reboot.</p>
+<p>FreeBSD has it(<a href="https://www.freebsd.org/cgi/cvsweb.cgi/src/sbin/shutdown/shutdown.c?annotate=1.26">line 96</a>):</p>
+<blockquote>
+<p>void die_you_gravy_sucking_pig_dog(void);</p>
+</blockquote>
+<p>OpenBSD has it(<a href="https://www.openbsd.org/cgi-bin/cvsweb/src/sbin/shutdown/shutdown.c?annotate=1.36">line 93</a>):</p>
+<blockquote>
+<p>void __dead die_you_gravy_sucking_pig_dog(void);</p>
+</blockquote>
+<p>NetBSD has it(<a href="https://cvsweb.netbsd.org/bsdweb.cgi/src/sbin/shutdown/shutdown.c?annotate=1.54">line 100</a>):</p>
+<blockquote>
+<p>static void die_you_gravy_sucking_pig_dog(void) __dead;</p>
+</blockquote>
+<p>Even Apple <a href="https://opensource.apple.com/source/system_cmds/system_cmds-498.2/shutdown.tproj/shutdown.c">has it too</a>, but they #ifdef-ed it to another name since they don't condone that kind of <strong>shit</strong>:</p>
+<blockquote>
+<p>#ifdef __APPLE__
+void log_and_exec_reboot_or_halt(void);
+#else
+void die_you_gravy_sucking_pig_dog(void);
+#endif</p>
+</blockquote>
+<p>This kind of source code profanity is really common in the open source world ,thus no news here. :-)</p>
+<p>I wonder for how long has this <em>gravy sucking pig dog</em> been wondering the BSD sources, maybe it can be traced back to Berkley BSD? If you happen to know, please feel free to share with us in a comment to this post.</p>
+<p>Oh, almost forgot, and Linux is not better, for eg. <a href="https://www.vidarholen.net/contents/wordcount/">here is a graph</a> of a small selection of swear words in the Linux kernel or if you wan't to see a more entertaining piece, then grab a bag of popcorn and read through <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=477454">file:///Sebastian/Droge/please/choke/on/a/bucket/of/cocks</a>(that's an http url ofc) bug on Debian. Enjoy.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

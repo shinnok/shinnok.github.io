@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2010&#x2F;03&#x2F;microsoft-windows-7vista-forensics-guides-for-le&#x2F;">Microsoft Windows 7&#x2F;Vista Forensics Guides for LE</a>
+</h2>
+<p class="subtitle"><strong>2010-03-04</strong></p>
+</div>
+<div class="item">
+<p><a href="https://shinnok.com/rants/2010/03/microsoft-windows-7vista-forensics-guides-for-le/images/microforensics6.png"><img src="https://shinnok.com/rants/2010/03/microsoft-windows-7vista-forensics-guides-for-le/images/microforensics6.png" alt="" title="microforensics6" /></a><a href="https://shinnok.com/rants/2010/03/microsoft-windows-7vista-forensics-guides-for-le/images/microforensics9.png"><img src="https://shinnok.com/rants/2010/03/microsoft-windows-7vista-forensics-guides-for-le/images/microforensics9.png" alt="" title="microforensics9" /></a><a href="https://shinnok.com/rants/2010/03/microsoft-windows-7vista-forensics-guides-for-le/images/microforensics10.png"><img src="https://shinnok.com/rants/2010/03/microsoft-windows-7vista-forensics-guides-for-le/images/microforensics10.png" alt="" title="microforensics10" /></a></p>
+<p>On 25 Feb. a nice set of documents used by Microsoft in aiding the law enforcement authorities with forensics related to Windows Vista and Window 7 were leaked and first published on <a href="https://publicintelligence.net/">Public Intelligence</a>.</p>
+<p>They are a good read and explain a lot of what Microsoft does and does not do to keep your privacy in place and what kind of risks you are exposed when using these two operating systems and with a little background in security you can start defending your privacy better.</p>
+<p>The documents provide a great forensic insight and if you do care about your privacy then you should <a href="https://publicintelligence.net/microsoft-windows-7vista-advanced-forensics-guides-for-law-enforcement/">read them</a>.</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

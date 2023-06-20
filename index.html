@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item" id="welcome">
+    <p>You've reached Shinnok's lair. A little info about the website:</p>
+    <ul>
+        <li><a href="/rants">Rants</a> - Stuff I have to write about, show off or complain. My blog.</li>
+        <li><a href="/vulns">Vulns/Exploits</a> - Vulnerabilites discovered by me as well as exploits I've written.</li>
+        <li><a href="/projects">Projects</a> - Here you can find various projects I started or got involved with and tools I've written.</li>
+        <li><a href="/stuff">Stuff</a> - Random stuff that I did or gathered along the road.</li>
+        <li><a href="/about">About</a>  - Some words about me and this website, plus contact info.</li>
+        <br />
+    <div class="quote">Now grab a beer and enjoy wandering my realm</div>
+    </ul>
+</div>
+<div class="item" id="project-updates">
+    <h1>Latest Projects</h1>
+    <ul>
+        <li><a href="/projects/#tarsnap">[2017-07-29] Tarsnap GUI v1.0 stable released</a></li>
+        <li><a href="/projects/#johnny">[2015-07-08] Johnny v2.0 released. </a> See <a href="http://www.openwall.com/lists/john-users/2015/07/08/3">list announcement</a> and <a href="/rants/2015/10/johnny-2-0-reloaded/">blog post</a></li>
+        <li><a href="/projects/#tarsnap">[2015-06-11] Added project Tarsnap GUI</a></li>
+        <li><a href="/projects/#johnny">[2012-08-21] Added project Johnny</a></li>
+        <li><a href="/projects/#ncgui">[2011-03-25] Added project NetcatGUI</a></li>
+    </ul>
+</div>
+<div class="item" id="vulns-updates">
+    <h1>Latest Vulnerabilities</h1>
+    <ul>
+        <li><a href="vulns_html/wireshark.html">[2008-09-28] Wireshark 1.0.x .ncf local DOS</a></li>
+        <li><a href="vulns_html/pftp.html">[2008-09-14] The Personal FTP Server 6.0f RETR DOS</a></li>
+        <li><a href="vulns_html/chrome.html">[2008-09-05] Google Chrome Browser 0.2.149.27 Remote DoS</a></li>
+        <li><a href="vulns_html/thunderbird.html">[2008-07-23] Thunderbird 2.0.0.14 url handling cpu+memory consumption DOS</a></li>
+        <li><a href="vulns_html/firefox.html">[2008-07-23] Firefox 2,3 url handling memory consumption DOS</a></li>
+        <li><a href="vulns_html/opera.html">[2008-07-23] Opera 9.5.1 url handling memory+cpu consumption DOS</a></li>
+        <li><a href="vulns_html/mediamonkey.html">[2008-07-16] MediaMonkey URI Handling Multiple Denial of Service Vulnerabilities</a></li>
+        <li><a href="vulns_html/bitcomet.html">[2008-07-16] BitComet URI Handling Denial of Service Vulnerability</a></li>
+        <li><a href="vulns_html/quickplayer.html">[2008-07-16] QuickPlayer '.m3u' File Buffer Overflow Vulnerability</a></li>
+        <li><a href="vulns_html/winremotepc.html">[2008-07-15] WinRemotePC Full+Lite 2008 r.2server Remote Denial of Service Vulnerability</a></li>
+    </ul>
+</div>
+<div class="item" id="exploit-updates">
+    <h1>Latest Exploits</h1>
+    <ul>
+        <li><a href="xploits_html/pftp.html">[2008-09-14] The Personal FTP Server 6.0f RETR DOS exploit</a></li>
+        <li><a href="xploits_html/winremotepc.html">[2008-07-15] WinRemotePC Full+Lite 2008 r.2server Denial of Service Exploit</a></li>
+        <li><a href="xploits_html/dap.html">[2008-07-11] Download Accelerator Plus - DAP 8.x m3u File Buffer Overflow Exploit</a></li>
+        <li><a href="xploits_html/xnview.html">[2008-06-26] XnView 1.93.6 for Windows .taac Local Buffer Overflow Exploit PoC</a></li>
+    </ul>
+</div>
+
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

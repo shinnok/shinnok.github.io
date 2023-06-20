@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Shinnok at localhost."/>
+<meta name="keywords" content="shinnok, exploits, vulnerabilities, buffer overflow, cyber-security, unix, linux, open-source, c++, Qt, programming, cross-platform"/>
+<meta name="author" content="Shinnok"/>
+<link rel="icon" href="/img/shinnok.png" type="image/png" />
+<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<title>Shinnok @127.0.0.1</title>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+        <div id="gfx">
+            <div id="hexdump">
+                <script>
+                 var p=0,q=-12;function a(){if(window.setTimeout&&document.getElementsByTagName){var o=(2<<6);var b=document.getElementsByTagName("pre")[0];b.style.top=(p-o)+"pt";var l=document.getElementsByTagName("b");var o=-(p-o)+"pt";for(var a in l){if(l[a].style)l[a].style.top=o;}p+=q;if(p<-2<<9||p>=0)q=-q;window.setTimeout(this.a,2<<8);}};
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                  if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("hexdump").innerHTML = xhr.responseText;
+                    a();
+                  }
+                };
+                xhr.open("GET", "/hexdump.html", true);
+                xhr.send();
+                </script>
+            </div>
+
+            <div id="logo"><h1><a href="#">Shinnok @127.0.0.1</a></h1></div>
+            <div class="quote" id="head-quote"><h4><a href="/">When in doubt, use brute force</a></h4></div>
+        </div>
+        <div class="menu">
+                <a href="/"><center><span>Home</span></center></a>
+                <a href="/rants/"><center><span>Rants</span></center></a>
+                <a href="/vulns/"><center><span>Vulns/Exploits</span></center></a>
+                <a href="/projects/"><center><span>Projects</span></center></a>
+                <a href="/stuff/"><center><span>Stuff</span></center></a>
+                <a href="/about/" id="last"><center><span>About</span></center></a>
+        </div>
+</div> <!--header-->
+
+<div class="content">
+
+
+<div class="item">
+<h2 class="title">
+<a href="https:&#x2F;&#x2F;shinnok.com&#x2F;rants&#x2F;2009&#x2F;02&#x2F;freerapid-downloader&#x2F;">FreeRapid Downloader</a>
+</h2>
+<p class="subtitle"><strong>2009-02-18</strong></p>
+</div>
+<div class="item">
+<p><a href="https://wordrider.net/freerapid/index.html"><img src="https://shinnok.com/rants/2009/02/freerapid-downloader/images/freerapid_logo.jpg" alt="freerapid_logo" title="freerapid_logo" /></a></p>
+<p>A great tool, let me tell ya! It is a download manager for Rapidshare, MegaUpload, DepositFiles, Letibit.net plus another 2 dozens of file sharing services.</p>
+<p>It handles your links, waiting times and captcha files. It has a small captcha recognizer algorithm but for most of the &quot;captcha enabled&quot; services it will just pop a small box with the captcha and a textbox for you to input the captcha code. It is coded in Java thus works on Windows, Linux, Mac OSX. So all you have to do is copy your links in the clipboard(if you enable clipboard monitoring, if not the copy and paste in the app) and FreeRapid will handle the rest.</p>
+<p>Why do i call it a great tool? Well because it's free and it works and it is actively supported and maintained and of course because it makes the task of downloading 10+ links of Rapidshare(a tiny ex.) without a paid account a much easier bargain and less of a nightmare if you have the time, because this is no hack tool and it won't cut you the waiting time or stuff like that(unless you have a list of proxies that works with file sharing services and gracefully provide them to FreeRapid). So if you are patient your files will be downloaded, even faster then you could manually because with this tool you don't lose even a second of downloading time since the waiting time after your last finished download expired.</p>
+<p>To sum it up...A GREAT TOOL! Big Five for the team behind it and keep up the good work. o/</p>
+<p>Head on to the homepage for more info: <strong><a href="https://wordrider.net/freerapid/index.html">FreeRapid Downloader</a></strong></p>
+
+</div>
+
+</div>
+
+<div class="footer">&copy; copycats 1970 <a href="#">↥</a></div>
+</div> <!--main-->
+</body>
+</html>
+
